@@ -25,6 +25,8 @@ namespace PLWPF
 		IBL bl;
 		public Window1() { bl = FactoryBL.getBL(); }
 
+		int a;
+
 		public MainWindow()
 		{
 			InitializeComponent();
