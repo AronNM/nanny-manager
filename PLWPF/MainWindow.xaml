@@ -6,7 +6,7 @@
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="NannyMatcher" Height="600" Width="600">
+        Title="Nanny Matcher" Height="600" Width="600">
 
     <Grid Background="GhostWhite">
         <Grid.ColumnDefinitions>

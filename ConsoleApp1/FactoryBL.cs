@@ -15,8 +15,11 @@ namespace BL
 		public static IBL get_bl()
 		{
 			if (FactoryBl == null)
+			{
 				FactoryBl = new BL_imp();
-			initialize(FactoryBl);		//function which initializes the instance with demo values
+				initialize(FactoryBl);      //function which initializes the instance with demo values
+
+			}
 			return FactoryBl;
 		}
 

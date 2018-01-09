@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nanny-icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -62,6 +65,9 @@
     </Compile>
     <Compile Include="delete\DeleteMother.xaml.cs">
       <DependentUpon>DeleteMother.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAll\ShowAllMothers.xaml.cs">
+      <DependentUpon>ShowAllMothers.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\ManageMothers.xaml.cs">
       <DependentUpon>ManageMothers.xaml</DependentUpon>
@@ -99,6 +105,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ShowAll\ShowAllMothers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="windows\ManageMothers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +167,12 @@
     <Resource Include="images\kids.gif" />
     <Resource Include="images\mom.gif" />
     <Resource Include="images\nanny.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="nanny.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="nanny-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
