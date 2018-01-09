@@ -60,8 +60,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Add\AddNewChild.xaml.cs">
+      <DependentUpon>AddNewChild.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Add\AddNewMother.xaml.cs">
       <DependentUpon>AddNewMother.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add\AddNewNanny.xaml.cs">
+      <DependentUpon>AddNewNanny.xaml</DependentUpon>
     </Compile>
     <Compile Include="delete\DeleteMother.xaml.cs">
       <DependentUpon>DeleteMother.xaml</DependentUpon>
@@ -78,9 +84,17 @@
     <Compile Include="windows\ManageChildren.xaml.cs">
       <DependentUpon>ManageChildren.xaml</DependentUpon>
     </Compile>
+    <Page Include="Add\AddNewChild.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Add\AddNewMother.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add\AddNewNanny.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="choiceBoxUC.xaml">
       <SubType>Designer</SubType>
