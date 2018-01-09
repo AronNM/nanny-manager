@@ -23,7 +23,7 @@ namespace PLWPF
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		IBL bl;
+		//IBL bl;
 		
 
 		public MainWindow()

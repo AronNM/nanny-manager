@@ -60,6 +60,9 @@
     <Compile Include="Add\AddNewMother.xaml.cs">
       <DependentUpon>AddNewMother.xaml</DependentUpon>
     </Compile>
+    <Compile Include="delete\DeleteMother.xaml.cs">
+      <DependentUpon>DeleteMother.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\ManageMothers.xaml.cs">
       <DependentUpon>ManageMothers.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="choiceBoxUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="delete\DeleteMother.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,13 +150,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="welcome-splash.JPG" />
+    <SplashScreen Include="images\welcome-splash.JPG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="contract.gif" />
-    <Resource Include="kids.gif" />
-    <Resource Include="mom.gif" />
-    <Resource Include="nanny.gif" />
+    <Resource Include="images\contract.gif" />
+    <Resource Include="images\kids.gif" />
+    <Resource Include="images\mom.gif" />
+    <Resource Include="images\nanny.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
