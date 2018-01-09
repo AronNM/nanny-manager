@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BL;
 using BE;
+using PLWPF.windows;
 
 namespace PLWPF
 {
@@ -23,9 +24,7 @@ namespace PLWPF
 	public partial class MainWindow : Window
 	{
 		IBL bl;
-		public Window1() { bl = FactoryBL.getBL(); }
-
-		int a;
+		
 
 		public MainWindow()
 		{
@@ -38,6 +37,17 @@ namespace PLWPF
 		private void choiceBoxUC_Loaded(object sender, RoutedEventArgs e)
 		{
 
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void Manage_Mothers_Click(object sender, RoutedEventArgs e)
+		{
+			ManageMothers manage_mothers = new ManageMothers();
+			manage_mothers.ShowDialog();
 		}
 	}
 }
