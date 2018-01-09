@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nanny-icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -57,14 +60,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Add\AddNewChild.xaml.cs">
-      <DependentUpon>AddNewChild.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Add\AddNewMother.xaml.cs">
       <DependentUpon>AddNewMother.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Add\AddNewNanny.xaml.cs">
-      <DependentUpon>AddNewNanny.xaml</DependentUpon>
+    <Compile Include="delete\DeleteMother.xaml.cs">
+      <DependentUpon>DeleteMother.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowAll\ShowAllMothers.xaml.cs">
+      <DependentUpon>ShowAllMothers.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\ManageMothers.xaml.cs">
       <DependentUpon>ManageMothers.xaml</DependentUpon>
@@ -75,19 +78,15 @@
     <Compile Include="windows\ManageChildren.xaml.cs">
       <DependentUpon>ManageChildren.xaml</DependentUpon>
     </Compile>
-    <Page Include="Add\AddNewChild.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Add\AddNewMother.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Add\AddNewNanny.xaml">
+    <Page Include="choiceBoxUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="choiceBoxUC.xaml">
+    <Page Include="delete\DeleteMother.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,6 +105,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ShowAll\ShowAllMothers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="windows\ManageMothers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,13 +160,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="welcome-splash.JPG" />
+    <SplashScreen Include="images\welcome-splash.JPG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="contract.gif" />
-    <Resource Include="kids.gif" />
-    <Resource Include="mom.gif" />
-    <Resource Include="nanny.gif" />
+    <Resource Include="images\contract.gif" />
+    <Resource Include="images\kids.gif" />
+    <Resource Include="images\mom.gif" />
+    <Resource Include="images\nanny.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="nanny.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="nanny-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

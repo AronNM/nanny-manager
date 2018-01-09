@@ -33,11 +33,11 @@ namespace BE
         public override string ToString()
 		{
             Console.WriteLine("");
-            return "ID: " + this.Id + ", First name: " + this.First_Name + ", Family name: " + this.Family_Name + ", Telephone num:"
-				+ this.Telephone_Number + "\nAddress: " + this.Home_Address + ", Max travel distance: " + this.Max_Travel_Distance + ", Comments: " + this.Comments
+            return "ID: " + this.Id + "\nName: " + this.First_Name + " " + this.Family_Name + "\nTelephone num: "
+				+ this.Telephone_Number + "\nAddress: " + this.Home_Address + "\nMax travel distance: " + this.Max_Travel_Distance + "\nComments: " + this.Comments
                 +("\nSearching address: ") + this.Searching_Address
-				+ "\nNeeds on the following days: " + ((this.Needs_On_Day[0]) ? "Sun, " : "") + ((this.Needs_On_Day[1]) ? "Mon, " : "") + ((this.Needs_On_Day[2]) ? "Tue, " : "") +
-				((this.Needs_On_Day[3]) ? "Wed, " : "") + ((this.Needs_On_Day[4]) ? "Thur, " : "") + ((this.Needs_On_Day[5]) ? "Fri " : "");
+				+ "\nNeeds on the following days: " + ((this.Needs_On_Day[0]) ? "Sun " : "") + ((this.Needs_On_Day[1]) ? "Mon " : "") + ((this.Needs_On_Day[2]) ? "Tue " : "") +
+				((this.Needs_On_Day[3]) ? "Wed " : "") + ((this.Needs_On_Day[4]) ? "Thur " : "") + ((this.Needs_On_Day[5]) ? "Fri" : "");
 		}
 	}
 }

@@ -37,7 +37,7 @@ namespace BL
 		void update_contract(int number, int attribute, string content);
 		#endregion
 
-		#region contract fuctions
+		#region get list fuctions
 		List<Nanny> get_nanny_list();
 		List<Mother> get_mother_list();
 		List<Child> get_child_list();
