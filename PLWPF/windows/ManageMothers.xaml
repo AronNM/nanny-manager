@@ -1,0 +1,22 @@
+﻿<Window x:Class="PLWPF.windows.ManageMothers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF.windows"
+        mc:Ignorable="d"
+        Title="ManageMothers" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+        <Button Name ="AddMother" Content="Add Mother" Grid.Row="0"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Add_Mother_Click" />
+        <Button Name="EditMother" Content="Edit Mother" Grid.Row="1"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Edit_Mother_Click" />
+        <Button Name="DeleteMother" Content="Delete Mother" Grid.Row="2"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Delete_Mother_Click" />
+        <Button Name="ShowAllMothers" Content="Show All Mothers" Grid.Row="3"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Show_All_Mothers_Click" />
+    </Grid>
+
+</Window>

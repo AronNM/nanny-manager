@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-	public enum Language { ENGLISH, HEBREW, RUSSIAN, YIDDISH, ARABIC }
+	public enum Language { ENGLISH=0, HEBREW=1, RUSSIAN=2, YIDDISH=3, ARABIC=4 }
     public enum Week { Sunday=1, Monday=2, Tuesday=3, Wednesday=4,Thursday=5,Friday=6}
 
 	public static class Consts
