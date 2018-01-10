@@ -240,10 +240,67 @@ namespace BL
 			}
 			return mother_list;
 		}
-		#endregion
+		public List<SortNannyBy> get_sort_nannies_by_list()
+		{
+			List<SortNannyBy> list = new List<SortNannyBy>();
+			list.Add(SortNannyBy.random);
+			list.Add(SortNannyBy.Id);
+			list.Add(SortNannyBy.LastName);
+			list.Add(SortNannyBy.floor);
+			list.Add(SortNannyBy.Experience_Years);
+			list.Add(SortNannyBy.Max_Children);
+			list.Add(SortNannyBy.Hourly_Price);
+			list.Add(SortNannyBy.Monthly_Price);
+			list.Add(SortNannyBy.Rating);
+			list.Add(SortNannyBy.Lang);
+			return list;
+		}
+		public List<Nanny> get_nanny_list(SortNannyBy sortBy)
+		{
+			List<Nanny> nanny_list = d.get_nanny_list();
+			if (sortBy == SortNannyBy.Id)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Id.CompareTo(mother2.Id)));
+			}
+			if (sortBy == SortNannyBy.floor)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.floor.CompareTo(mother2.floor)));
+			}
+			if (sortBy == SortNannyBy.LastName)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Family_Name.CompareTo(mother2.Family_Name)));
+			}
+			if (sortBy == SortNannyBy.Experience_Years)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Experience_Years.CompareTo(mother2.Experience_Years)));
+			}
+			if (sortBy == SortNannyBy.Experience_Years)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Experience_Years.CompareTo(mother2.Experience_Years)));
+			}
+			if (sortBy == SortNannyBy.Hourly_Price)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Hourly_Price.CompareTo(mother2.Hourly_Price)));
+			}
+			if (sortBy == SortNannyBy.Monthly_Price)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Monthly_Price.CompareTo(mother2.Monthly_Price)));
+			}
+			if (sortBy == SortNannyBy.Rating)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Rating.CompareTo(mother2.Rating)));
+			}
+			if (sortBy == SortNannyBy.Lang)
+			{
+				nanny_list.Sort((mother1, mother2) => (mother1.Lang.CompareTo(mother2.Lang)));
+			}
+			return nanny_list;
+		}
+	
+	#endregion
 
-		#region helper fuctions
-		public Double get_distance(string address1, string address2)
+	#region helper fuctions
+	public Double get_distance(string address1, string address2)
 		{
 			var drivingDirectionRequest = new DirectionsRequest { TravelMode = TravelMode.Driving, Origin = address1, Destination = address2, };
 

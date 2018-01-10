@@ -19,7 +19,7 @@ namespace BE
 		#endregion
 		public override string ToString()
 		{
-			return "ID: " + this.Id + ", First name: " + this.First_Name + ", Birth day: " + this.Birth_Date.ToString("dd/MM/yyyy") + ((this.Special_Needs)? (", Special Needs: " + this.Needs) : "");
+			return "ID: " + this.Id + "\nFirst Name: " + this.First_Name + "\nBirth day: " + this.Birth_Date.ToString("dd/MM/yyyy") + ((this.Special_Needs)? ("\nSpecial Needs: " + this.Needs) : "");
 		}
 	}
 }

@@ -1,27 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using BE;
+using BL;
+
 
 namespace PLWPF.ShowAll
 {
 	/// <summary>
-	/// Interaction logic for ShowAllNannies.xaml
+	/// Interaction logic for ShowAllMothers.xaml
 	/// </summary>
 	public partial class ShowAllNannies : Window
 	{
+		IBL bl;
+		SortNannyBy sortBy;
+
 		public ShowAllNannies()
 		{
+			SortNannyBy sortBy = new SortNannyBy();
+			DataContext = sortBy;
 			InitializeComponent();
+			bl = factoryBL.get_bl();
+			dataGrid.ItemsSource = bl.get_nanny_list();
+			comboBox.ItemsSource = bl.get_sort_nannies_by_list();
+		}
+
+		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			sortBy = (SortNannyBy)comboBox.SelectedItem;
+			dataGrid.ItemsSource = bl.get_nanny_list(sortBy);
 		}
 	}
 }
+

@@ -3,10 +3,57 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PLWPF.ShowAll"
+        xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="ShowAllNannies" Height="300" Width="300">
+        Title="ShowAllNannies"  Height="330" Width="600">
     <Grid>
-        
+        <Label x:Name="label" Content="View All Nannies" Style="{DynamicResource LargeTextStyle}" Margin="0,25,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="sort" Content="sort by:" Style="{DynamicResource SmallTextStyle}" Margin="25,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}"  SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}" Margin="80,28,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="22"/>
+        <DataGrid x:Name="dataGrid" Margin="20,73,20,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                          Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="First Name"
+                          Binding="{Binding First_Name}"/>
+                <DataGridTextColumn Header="Last Name"
+                          Binding="{Binding Family_Name}"/>
+                <DataGridTextColumn Header="Phone Number"
+                          Binding="{Binding Telephone_Number}"/>
+                <DataGridTextColumn Header="Address"
+                          Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="Birth Day"
+                          Binding="{Binding Birth_Date}" />
+                
+                <DataGridTextColumn Header="ID"
+                          Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="First Name"
+                          Binding="{Binding First_Name}"/>
+                <DataGridTextColumn Header="Last Name"
+                          Binding="{Binding Family_Name}"/>
+                <DataGridTextColumn Header="Phone Number"
+                          Binding="{Binding Telephone_Number}"/>
+                <DataGridTextColumn Header="Address"
+                          Binding="{Binding Home_Address}"/>
+                <DataGridTextColumn Header="Max Travel Distance"
+                          Binding="{Binding Max_Travel_Distance}"/>
+                <DataGridTextColumn Header="floor"
+                          Binding="{Binding floor}"/>
+                <DataGridTextColumn Header="Experience Years"
+                          Binding="{Binding Experience_Years}"/>
+                <DataGridTextColumn Header="Max Children"
+                          Binding="{Binding Max_Children}"/>
+                <DataGridTextColumn Header="Max Travel Distance"
+                          Binding="{Binding Max_Travel_Distance}"/>
+                <DataGridTextColumn Header="Hourly Price"
+                          Binding="{Binding Hourly_Price}" />
+                <DataGridTextColumn Header="Monthly Price"
+                          Binding="{Binding Monthly_Price}"/>
+                <DataGridTextColumn Header="Language"
+                          Binding="{Binding Language}"/>
+                <DataGridTextColumn Header="*****"
+                          Binding="{Binding Rating}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

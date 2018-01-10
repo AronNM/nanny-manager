@@ -23,5 +23,9 @@ namespace PLWPF.ShowAll
 		{
 			InitializeComponent();
 		}
+
+		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+		}
 	}
 }

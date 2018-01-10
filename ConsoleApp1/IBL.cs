@@ -44,6 +44,8 @@ namespace BL
 		List<Child> get_child_list();
 		List<Contract> get_contract_list();
 		List<SortMotherBy> get_sort_mothers_by_list();
+		List<SortNannyBy> get_sort_nannies_by_list();
+		List<Nanny> get_nanny_list(SortNannyBy sortBy);
 		#endregion
 
 		#region helper fuctions

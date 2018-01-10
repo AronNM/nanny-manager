@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF.ShowAll"
         mc:Ignorable="d"
-        Title="ShowAllChildren" Height="300" Width="300">
+        Title="ShowAllChildren" Height="330" Width="600">
     <Grid>
-        
+        <Label x:Name="label" Content="View All Children" Style="{DynamicResource LargeTextStyle}" Margin="0,25,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="sort" Content="sort by:" Style="{DynamicResource SmallTextStyle}" Margin="25,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}"  SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}" Margin="80,28,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="22"/>
+        <DataGrid x:Name="dataGrid" Margin="20,73,20,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                          Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="First Name"
+                          Binding="{Binding First_Name}"/>
+                <DataGridTextColumn Header="Mother Id"
+                          Binding="{Binding Mother_Id}"/>
+                <DataGridTextColumn Header="Birth Day"
+                          Binding="{Binding Birth_Date}" />
+                <DataGridTextColumn Header="Special Needs"
+                          Binding="{Binding Special_Needs}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

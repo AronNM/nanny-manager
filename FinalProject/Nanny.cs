@@ -43,12 +43,12 @@ namespace BE
         public override string ToString()
 		{
             Console.WriteLine("");
-            return "ID: " + this.Id + ", First name: " + this.First_Name + ", Family name: " + this.Family_Name + ", Birth day: " + this.Birth_Date.ToString("dd/MM/yyyy") + ", Telephone num: "
-                + this.Telephone_Number + "\nAddress: " + this.Address + ", Floor: " + this.floor + ", Experience Years: " + this.Experience_Years + ((this.Elevator_Exists) ? ", has elevator" : "")
-                + ((this.Vacation_Like_Tamat) ? ", vacation like tamat" : "") + ((this.Hourly_Price_Exists) ? (", Hourly Price " + this.Hourly_Price) : (", Monthly Price " + this.Monthly_Price))
-                + "\nWorks on the following days: " + ((this.Works_On_Day[0]) ? "Sun, " : "") + ((this.Works_On_Day[1]) ? "Mon, " : "") + ((this.Works_On_Day[2]) ? "Tue, " : "") +
-                ((this.Works_On_Day[3]) ? "Wed, " : "") + ((this.Works_On_Day[4]) ? "Thur, " : "") + ((this.Works_On_Day[5]) ? "Fri " : "") +
-                ", Recommendations: " + this.Recommendations + ("\n Max children she can takes: ") + this.Max_Children+("  Max child age: ") + this.Max_Child_Age + ("  Min child age: " +this.Min_Child_Age);
+            return "ID: " + this.Id + "\nName: " + this.First_Name + " " + this.Family_Name + "\nBirth day: " + this.Birth_Date.ToString("dd/MM/yyyy") + "\nTelephone num: "
+                + this.Telephone_Number + "\nAddress: " + this.Address + "\nFloor: " + this.floor + "\nExperience Years: " + this.Experience_Years + ((this.Elevator_Exists) ? "\nhas elevator" : "")
+                + ((this.Vacation_Like_Tamat) ? "\nvacation like tamat" : "") + ((this.Hourly_Price_Exists) ? ("\nHourly Price " + this.Hourly_Price) : ("\nMonthly Price " + this.Monthly_Price))
+                + "\nWorks on the following days: " + ((this.Works_On_Day[0]) ? "Sun\n" : "") + ((this.Works_On_Day[1]) ? "Mon\n" : "") + ((this.Works_On_Day[2]) ? "Tue\n" : "") +
+                ((this.Works_On_Day[3]) ? "Wed\n" : "") + ((this.Works_On_Day[4]) ? "Thur\n" : "") + ((this.Works_On_Day[5]) ? "Fri " : "") +
+                "\nRecommendations: " + this.Recommendations + ("\n Max children she can takes: ") + this.Max_Children+("  Max child age: ") + this.Max_Child_Age + ("  Min child age: " +this.Min_Child_Age);
 		}
 	}
 }
