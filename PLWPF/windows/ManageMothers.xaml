@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF.windows"
         mc:Ignorable="d"
-        Title="Manage Mothers" Height="450" Width="450">
+        Title="ManageMothers" Height="300" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*"/>
@@ -13,10 +13,10 @@
             <RowDefinition Height="25*"/>
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
-        <Button Name ="AddMother" Content="Add Mother" Grid.Row="0"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Add_Mother_Click" />
-        <Button Name="EditMother" Content="Edit Mother" Grid.Row="1"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Edit_Mother_Click" />
-        <Button Name="DeleteMother" Content="Delete Mother" Grid.Row="2"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Delete_Mother_Click" />
-        <Button Name="ShowAllMothers" Content="Show All Mothers" Grid.Row="3"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Show_All_Mothers_Click" />
+        <Button Name ="AddMother" Content="Add Mother" Grid.Row="0"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Add_Mother_Click" />
+        <Button Name="EditMother" Content="Edit Mother" Grid.Row="1"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Edit_Mother_Click" />
+        <Button Name="DeleteMother" Content="Delete Mother" Grid.Row="2"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Delete_Mother_Click" />
+        <Button Name="ShowAllMothers" Content="Show All Mothers" Grid.Row="3"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Show_All_Mothers_Click" />
     </Grid>
 
 </Window>

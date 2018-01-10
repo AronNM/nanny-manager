@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="AddNewMother" Height="300" Width="300">
+        Title="AddNewMother" Height="500" Width="500">
     <Grid>
-        <Grid Margin="10,10,10,50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="18*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="10,25,10,35" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
@@ -22,18 +26,29 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Label Name="Label1" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center"/>
-            <Label Name="Label2" Content="Last Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
-            <Label Name="Label3" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center"/>
-            <Label Name="Label4" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center"/>
-            <Label Name="Label5" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center"/>
-            <Label Name="Label6" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center"/>
-            <Label Name="Label7" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="6" VerticalAlignment="Center"/>
-            <Label Name="Label8" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Center"/>
-            <Label Name="Label9" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="8" VerticalAlignment="Center"/>
+            <Label Name="Label1" Content="Id" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center"/>
+            <Label Name="Label2" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
+            <Label Name="Label3" Content="Last Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center"/>
+            <Label Name="Label4" Content="Home Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center"/>
+            <Label Name="Label5" Content="Second Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center"/>
+            <Label Name="Label6" Content="Max travel distance" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center"/>
+            <Label Name="Label7" Content="Which days she needs " FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="6" VerticalAlignment="Center"/>
+            <Label Name="Label8" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Center"/>
+            <Label Name="Label9" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="8" VerticalAlignment="Center"/>
             <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" />
+            <RadioButton x:Name="radioButton" Content="Sunday" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="7,19,0,0" Grid.Row="6" VerticalAlignment="Top" Width="62" RenderTransformOrigin="2.093,0.735"/>
+            <RadioButton x:Name="radioButton1" Content="Monday" Grid.Column="1" HorizontalAlignment="Left" Margin="83,19,0,0" Grid.Row="6" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.527,1.18"/>
+            <RadioButton x:Name="radioButton2" Content="Tuesday" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="159,19,0,0" Grid.Row="6" VerticalAlignment="Top" Width="67"/>
+            <RadioButton x:Name="radioButton3" Content="Wednesday" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="7,8,0,0" Grid.Row="7" VerticalAlignment="Top" Width="85"/>
+            <RadioButton x:Name="radioButton4" Content="Thursday" Grid.Column="1" HorizontalAlignment="Left" Margin="92,8,0,0" Grid.Row="7" VerticalAlignment="Top" Height="23" Width="69"/>
+            <RadioButton x:Name="radioButton5" Content="Friday" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="166,8,0,0" Grid.Row="7" VerticalAlignment="Top"/>
         </Grid>
 
     </Grid>
-    
-   </Window>
+
+</Window>
