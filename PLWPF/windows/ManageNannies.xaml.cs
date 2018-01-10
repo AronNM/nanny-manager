@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PLWPF.ShowAll;
+using PLWPF.delete;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PLWPF
 {
@@ -22,6 +12,34 @@ namespace PLWPF
 		public ManageNannies()
 		{
 			InitializeComponent();
+		}
+
+		private void Add_Nanny_Click(object sender, RoutedEventArgs e)
+		{
+			//AddNewNanny manage_Nannies = new AddNewNanny();
+			//manage_Nannies.Show();
+			Close();
+		}
+
+		private void Edit_Nanny_Click(object sender, RoutedEventArgs e)
+		{
+			//EditNanny edit_Nannies = new EditNanny();
+			//edit_Nannies.Show();
+			Close();
+		}
+
+		private void Delete_Nanny_Click(object sender, RoutedEventArgs e)
+		{
+			DeleteNanny delete_Nanny = new DeleteNanny();
+			delete_Nanny.ShowDialog();
+			Close();
+		}
+
+		private void Show_All_Nannies_Click(object sender, RoutedEventArgs e)
+		{
+			ShowAllNannies show_all_Nannies = new ShowAllNannies();
+			show_all_Nannies.ShowDialog();
+			Close();
 		}
 	}
 }

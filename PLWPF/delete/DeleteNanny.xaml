@@ -1,15 +1,15 @@
-﻿<Window x:Class="PLWPF.delete.DeleteMother"
+﻿<Window x:Class="PLWPF.delete.DeleteNanny"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PLWPF"
+        xmlns:local="clr-namespace:PLWPF.delete"
         mc:Ignorable="d"
-        Title="Delete Mother" Height="440" Width="400">
+        Title="DeleteNanny" Height="440" Width="400">
     <Grid>
         <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}" Margin="0,100,0,0" SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}"  VerticalAlignment="Top" Width="140" Height="22"/>
-        <Label x:Name="label" Style="{DynamicResource LargeTextStyle}" Content="Select the Mother Id you'd like to delete:" Margin="0,50,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="remove" Margin="0,330,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="Remove_Mother_Click"/>
+        <Label x:Name="label" Style="{DynamicResource LargeTextStyle}" Content="Select the Nanny Id you'd like to delete:" Margin="0,50,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="remove" Margin="0,330,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="Remove_Nanny_Click"/>
         <Label x:Name="label1" Style="{DynamicResource SmallTextStyle}" Content=""  Margin="0,150,0,0" VerticalAlignment="Top" Height="auto" Width="auto"/>
-   </Grid>
+    </Grid>
 </Window>

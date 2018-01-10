@@ -214,6 +214,32 @@ namespace BL
 		{
 			return d.get_contract_list();
 		}
+		public List<SortMotherBy> get_sort_mothers_by_list()
+		{
+			List<SortMotherBy> list = new List<SortMotherBy>();
+			list.Add(SortMotherBy.random);
+			list.Add(SortMotherBy.Id);
+			list.Add(SortMotherBy.LastName);
+			list.Add(SortMotherBy.MaxTravelDistance);
+			return list;
+		}
+		public List<Mother> get_mother_list(SortMotherBy sortBy)
+		{
+			List<Mother> mother_list= d.get_mother_list(); 
+			if (sortBy == SortMotherBy.Id)
+			{
+				mother_list.Sort((mother1, mother2) => (mother1.Id.CompareTo(mother2.Id)));
+			}
+			if (sortBy == SortMotherBy.MaxTravelDistance)
+			{
+				mother_list.Sort((mother1, mother2) => (mother1.Max_Travel_Distance.CompareTo(mother2.Max_Travel_Distance)));
+			}
+			if (sortBy == SortMotherBy.LastName)
+			{
+				mother_list.Sort((mother1, mother2) => (mother1.Family_Name.CompareTo(mother2.Family_Name)));
+			}
+			return mother_list;
+		}
 		#endregion
 
 		#region helper fuctions

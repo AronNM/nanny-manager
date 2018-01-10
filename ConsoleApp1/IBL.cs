@@ -40,8 +40,10 @@ namespace BL
 		#region get list fuctions
 		List<Nanny> get_nanny_list();
 		List<Mother> get_mother_list();
+		List<Mother> get_mother_list(SortMotherBy sortBy);
 		List<Child> get_child_list();
 		List<Contract> get_contract_list();
+		List<SortMotherBy> get_sort_mothers_by_list();
 		#endregion
 
 		#region helper fuctions

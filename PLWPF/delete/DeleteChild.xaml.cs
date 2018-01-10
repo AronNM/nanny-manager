@@ -7,32 +7,32 @@ using BL;
 namespace PLWPF.delete
 {
 	/// <summary>
-	/// Interaction logic for DeleteMother.xaml
+	/// Interaction logic for DeleteChild.xaml
 	/// </summary>
-	public partial class DeleteMother : Window
+	public partial class DeleteChild : Window
 	{
 		IBL bl;
-		Mother mother;
+		Child child;
 
-		public DeleteMother()
+		public DeleteChild()
 		{
 			bl = factoryBL.get_bl();
-			mother = new Mother();
-			DataContext = mother;
+			child = new Child();
+			DataContext = child;
 			InitializeComponent();
-			comboBox.ItemsSource = bl.get_mother_list();
+			comboBox.ItemsSource = bl.get_child_list();
 			comboBox.DisplayMemberPath = "Id";
 			comboBox.SelectedValuePath = "Id";
 
 		}
 
-		private void Remove_Mother_Click(object sender, RoutedEventArgs e)
+		private void Remove_Child_Click(object sender, RoutedEventArgs e)
 		{
 			try
 			{
-				int id = mother.Id;
-				bl.delete_mother(id);
-				MessageBox.Show("Mother " + id +" has been deleted!");
+				int id = child.Id;
+				bl.delete_child(id);
+				MessageBox.Show("Child " + id + " has been deleted!");
 				Close();
 			}
 			catch (Exception ex)
@@ -43,8 +43,8 @@ namespace PLWPF.delete
 		}
 		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			mother = (Mother)comboBox.SelectedItem;
-			label1.Content = mother.ToString();
+			child = (Child)comboBox.SelectedItem;
+			label1.Content = child.ToString();
 		}
 	}
 }

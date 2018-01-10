@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="ManageNannies" Height="300" Width="300">
+        Title="ManageNannies" Height="450" Width="450">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+        <Button Name ="AddMother" Content="Add Nanny" Grid.Row="0"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Add_Nanny_Click" />
+        <Button Name="EditNanny" Content="Edit Nanny" Grid.Row="1"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Edit_Nanny_Click" />
+        <Button Name="DeleteNanny" Content="Delete Nanny" Grid.Row="2"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Delete_Nanny_Click" />
+        <Button Name="ShowAllNannies" Content="Show All Nannies" Grid.Row="3"  Style="{DynamicResource LargeButtonStyle}"  Margin="10,10,10,10"   Click="Show_All_Nannies_Click" />
     </Grid>
+
 </Window>

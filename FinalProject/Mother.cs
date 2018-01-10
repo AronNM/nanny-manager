@@ -15,7 +15,7 @@ namespace BE
 		public string Telephone_Number { get; set; }
 		public string Home_Address { get; set; }
 		public string Second_Address { get; set; }
-		public double Max_Travel_Distance { get; set; }
+		public int Max_Travel_Distance { get; set; }
 		public string Searching_Address { get; set; }
 		public bool[] Needs_On_Day { get; set; }
 		public TimeSpan[,] Needs_Hours { get; set; }

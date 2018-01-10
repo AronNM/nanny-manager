@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="ShowAllMothers" Height="440" Width="400">
+        Title="ShowAllMothers" Height="330" Width="600">
     <Grid>
-        
+       <Label x:Name="label" Content="View All Mothers" Style="{DynamicResource LargeTextStyle}" Margin="0,25,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="sort" Content="sort by:" Style="{DynamicResource SmallTextStyle}" Margin="25,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}"  SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}" Margin="80,28,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="22"/>
+        <DataGrid x:Name="dataGrid" Margin="20,73,20,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                          Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="First Name"
+                          Binding="{Binding First_Name}"/>
+                <DataGridTextColumn Header="Last Name"
+                          Binding="{Binding Family_Name}"/>
+                <DataGridTextColumn Header="Phone Number"
+                          Binding="{Binding Telephone_Number}"/>
+                <DataGridTextColumn Header="Address"
+                          Binding="{Binding Home_Address}"/>
+                <DataGridTextColumn Header="Max Travel Distance"
+                          Binding="{Binding Max_Travel_Distance}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

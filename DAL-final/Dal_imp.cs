@@ -356,22 +356,27 @@ namespace DAL_final
         #region get lists fuctions
         public List<Nanny> get_nanny_list()
         {
-            return DataSource.Nannys_List;
+			var list = new List<Nanny>(DataSource.Nannys_List);
+            return list;
         }
 
         public List<Mother> get_mother_list()
         {
-            return DataSource.Mothers_List;
+			var list = new List<Mother>(DataSource.Mothers_List);
+            return list;
         }
 
         public List<Child> get_child_list()
         {
-            return DataSource.Children_List;
+			var list = new List<Child>(DataSource.Children_List);
+
+			return list;
         }
 
         public List<Contract> get_contract_list()
         {
-            return DataSource.Contracts_List;
+			var list = new List<Contract>(DataSource.Contracts_List);
+			return list;
         }
         #endregion
 

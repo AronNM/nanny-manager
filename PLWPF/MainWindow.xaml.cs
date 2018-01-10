@@ -23,31 +23,34 @@ namespace PLWPF
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		//IBL bl;
-		
 
 		public MainWindow()
 		{
 			InitializeComponent();
-
-			
-			
 		}
 
-		private void choiceBoxUC_Loaded(object sender, RoutedEventArgs e)
+		private void Manage_Nannies_Click(object sender, RoutedEventArgs e)
 		{
-
-		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-
+			ManageNannies manage_nannies = new ManageNannies();
+			manage_nannies.ShowDialog();
 		}
 
 		private void Manage_Mothers_Click(object sender, RoutedEventArgs e)
 		{
 			ManageMothers manage_mothers = new ManageMothers();
 			manage_mothers.ShowDialog();
+		}
+
+		private void Manage_Contracts_Click(object sender, RoutedEventArgs e)
+		{
+			ManageContracts manage_contracts = new ManageContracts();
+			manage_contracts.ShowDialog();
+		}
+
+		private void Manage_Children_Click(object sender, RoutedEventArgs e)
+		{
+			ManageChildren manage_children = new ManageChildren();
+			manage_children.ShowDialog();
 		}
 	}
 }

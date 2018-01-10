@@ -1,27 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PLWPF.ShowAll;
+using PLWPF.delete;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace PLWPF.windows
 {
 	/// <summary>
 	/// Interaction logic for Manage_Children.xaml
 	/// </summary>
-	public partial class Manage_Children : Window
+	public partial class ManageChildren : Window
 	{
-		public Manage_Children()
+		public ManageChildren()
 		{
 			InitializeComponent();
+		}
+
+		private void Add_Child_Click(object sender, RoutedEventArgs e)
+		{
+			//AddNewChild manage_Children = new AddNewChild();
+			//manage_Children.Show();
+			Close();
+		}
+
+		private void Edit_Child_Click(object sender, RoutedEventArgs e)
+		{
+			//EditChild edit_Children = new EditChild();
+			//edit_Children.Show();
+			Close();
+		}
+
+		private void Delete_Child_Click(object sender, RoutedEventArgs e)
+		{
+			DeleteChild delete_Child = new DeleteChild();
+			delete_Child.ShowDialog();
+			Close();
+		}
+
+		private void Show_All_Children_Click(object sender, RoutedEventArgs e)
+		{
+			ShowAllChildren show_all_Children = new ShowAllChildren();
+			show_all_Children.ShowDialog();
+			Close();
 		}
 	}
 }

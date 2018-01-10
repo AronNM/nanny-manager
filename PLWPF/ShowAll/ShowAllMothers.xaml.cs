@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using BE;
+using BL;
+
 
 namespace PLWPF.ShowAll
 {
@@ -19,9 +14,24 @@ namespace PLWPF.ShowAll
 	/// </summary>
 	public partial class ShowAllMothers : Window
 	{
+		IBL bl;
+		SortMotherBy sortBy;
+
 		public ShowAllMothers()
 		{
+			SortMotherBy sortBy = new SortMotherBy();
+			DataContext = sortBy;
 			InitializeComponent();
+			bl = factoryBL.get_bl();			
+			dataGrid.ItemsSource = bl.get_mother_list();
+			comboBox.ItemsSource = bl.get_sort_mothers_by_list();
+		}
+
+		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			sortBy = (SortMotherBy)comboBox.SelectedItem;
+			dataGrid.ItemsSource = bl.get_mother_list(sortBy);
 		}
 	}
 }
+
