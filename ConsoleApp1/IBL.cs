@@ -46,6 +46,7 @@ namespace BL
 		List<SortMotherBy> get_sort_mothers_by_list();
 		List<SortNannyBy> get_sort_nannies_by_list();
 		List<Nanny> get_nanny_list(SortNannyBy sortBy);
+		List<ContractCondition> get_contract_condition_list();
 		#endregion
 
 		#region helper fuctions
@@ -54,6 +55,7 @@ namespace BL
 		List<Nanny> check_secondry_match(Mother m);
 		List<Nanny> find_local_nannies(double max_distance, string address);
 		List<Child> get_all_nannyless_kids();
+		List<Child> get_all_specialNeeds_kids();
 		List<Nanny> get_all_tamat_vacation_nannies();
 		IEnumerable<Contract> get_contracts_by_condition(Func<Contract, bool> predicate = null);
 		int get_amount_of_contracts_by_condition(Func<Contract, bool> predicate = null);

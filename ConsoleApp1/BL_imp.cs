@@ -252,9 +252,18 @@ namespace BL
 			list.Add(SortNannyBy.Hourly_Price);
 			list.Add(SortNannyBy.Monthly_Price);
 			list.Add(SortNannyBy.Rating);
-			list.Add(SortNannyBy.Lang);
 			return list;
 		}
+		public List<ContractCondition> get_contract_condition_list()
+		{
+			List<ContractCondition> list = new List<ContractCondition>();
+			list.Add(ContractCondition.Contract_Signed);
+			list.Add(ContractCondition.Price_is_Hourly);
+			list.Add(ContractCondition.Price_is_Monthly);
+			list.Add(ContractCondition.Introduction_Meeting_Happened);
+			return list;
+		}
+
 		public List<Nanny> get_nanny_list(SortNannyBy sortBy)
 		{
 			List<Nanny> nanny_list = d.get_nanny_list();
@@ -274,9 +283,9 @@ namespace BL
 			{
 				nanny_list.Sort((mother1, mother2) => (mother1.Experience_Years.CompareTo(mother2.Experience_Years)));
 			}
-			if (sortBy == SortNannyBy.Experience_Years)
+			if (sortBy == SortNannyBy.Max_Children)
 			{
-				nanny_list.Sort((mother1, mother2) => (mother1.Experience_Years.CompareTo(mother2.Experience_Years)));
+				nanny_list.Sort((mother1, mother2) => (mother1.Max_Children.CompareTo(mother2.Max_Children)));
 			}
 			if (sortBy == SortNannyBy.Hourly_Price)
 			{
@@ -289,10 +298,6 @@ namespace BL
 			if (sortBy == SortNannyBy.Rating)
 			{
 				nanny_list.Sort((mother1, mother2) => (mother1.Rating.CompareTo(mother2.Rating)));
-			}
-			if (sortBy == SortNannyBy.Lang)
-			{
-				nanny_list.Sort((mother1, mother2) => (mother1.Lang.CompareTo(mother2.Lang)));
 			}
 			return nanny_list;
 		}
@@ -473,6 +478,19 @@ namespace BL
 				}
 			}
 			return nannyless_kids;
+		}
+
+		public List<Child> get_all_specialNeeds_kids()
+		{
+			List<Child> specialNeeds_kids = new List<Child>();
+			foreach (Child child in get_child_list())
+			{
+				if(child.Special_Needs == true)
+				{
+					specialNeeds_kids.Add(child);
+				}
+			}
+			return specialNeeds_kids;
 		}
 
 		public List<Nanny> get_all_available_nannys()

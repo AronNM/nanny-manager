@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="ShowAllContracts" Height="330" Width="600">
+        Title="ShowAllContracts" Height="330" Width="670">
     <Grid>
         <Label x:Name="label" Content="View All Contracts" Style="{DynamicResource LargeTextStyle}" Margin="0,25,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="sort" Content="sort by:" Style="{DynamicResource SmallTextStyle}" Margin="25,25,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}"  SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}" Margin="80,28,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="22"/>
-        <DataGrid x:Name="dataGrid" Margin="20,73,20,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" >
+        <Label x:Name="filter" Content="Select Filter:" Style="{DynamicResource SmallTextStyle}" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontWeight="DemiBold"/>
+        <RadioButton x:Name="All" Content="All Children"  HorizontalAlignment="Left" Height="19" Margin="10,105,0,0" Grid.Row="6" VerticalAlignment="Top" Width="92" RenderTransformOrigin="2.093,0.735" Checked="All_Checked" Unchecked="All_unChecked"/>
+        <RadioButton x:Name="Condition" Content="Specific Condition" HorizontalAlignment="Left" Margin="10,125,0,0" Grid.Row="6" VerticalAlignment="Top" Width="130" Checked="Condition_Checked" Unchecked="Condition_unChecked" />
+        <Label x:Name="sort" Content="Condition:" Style="{DynamicResource SmallTextStyle}" Margin="10,155,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"  FontWeight="DemiBold"/>
+        <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}"  SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}" Margin="15,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Height="22"/>
+        <DataGrid x:Name="dataGrid" Margin="153,73,20,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Number"
                           Binding="{Binding Number}"/>

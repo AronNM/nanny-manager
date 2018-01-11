@@ -24,20 +24,7 @@
                           Binding="{Binding Address}"/>
                 <DataGridTextColumn Header="Birth Day"
                           Binding="{Binding Birth_Date}" />
-                
-                <DataGridTextColumn Header="ID"
-                          Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="First Name"
-                          Binding="{Binding First_Name}"/>
-                <DataGridTextColumn Header="Last Name"
-                          Binding="{Binding Family_Name}"/>
-                <DataGridTextColumn Header="Phone Number"
-                          Binding="{Binding Telephone_Number}"/>
-                <DataGridTextColumn Header="Address"
-                          Binding="{Binding Home_Address}"/>
-                <DataGridTextColumn Header="Max Travel Distance"
-                          Binding="{Binding Max_Travel_Distance}"/>
-                <DataGridTextColumn Header="floor"
+                <DataGridTextColumn Header="Floor"
                           Binding="{Binding floor}"/>
                 <DataGridTextColumn Header="Experience Years"
                           Binding="{Binding Experience_Years}"/>
@@ -49,8 +36,6 @@
                           Binding="{Binding Hourly_Price}" />
                 <DataGridTextColumn Header="Monthly Price"
                           Binding="{Binding Monthly_Price}"/>
-                <DataGridTextColumn Header="Language"
-                          Binding="{Binding Language}"/>
                 <DataGridTextColumn Header="*****"
                           Binding="{Binding Rating}"/>
             </DataGrid.Columns>
