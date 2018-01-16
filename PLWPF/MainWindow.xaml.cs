@@ -52,5 +52,11 @@ namespace PLWPF
 			ManageChildren manage_children = new ManageChildren();
 			manage_children.ShowDialog();
 		}
+
+		private void Contract_Wizard_Click(object sender, RoutedEventArgs e)
+		{
+			CreateContractWindow wizard = new CreateContractWindow();
+			wizard.ShowDialog();
+		}
 	}
 }

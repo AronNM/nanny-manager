@@ -12,7 +12,7 @@
         <RadioButton x:Name="All" Content="All Children"  HorizontalAlignment="Left" Height="19" Margin="10,105,0,0" Grid.Row="6" VerticalAlignment="Top" Width="92" RenderTransformOrigin="2.093,0.735" Checked="All_Checked" Unchecked="All_unChecked"/>
         <RadioButton x:Name="Nannyless" Content="Nannyless Children" HorizontalAlignment="Left" Margin="10,125,0,0" Grid.Row="6" VerticalAlignment="Top" Width="130" Checked="Nannyless_Checked" Unchecked="Nannyless_unChecked" />
         <RadioButton x:Name="specialNeeds" Content="Special Needs Children" HorizontalAlignment="Left" Height="19" Margin="10,145,0,0" Grid.Row="6" VerticalAlignment="Top" Width="140" Checked="specialNeeds_Checked" Unchecked="specialNeeds_unChecked" />
-        <DataGrid x:Name="dataGrid" Margin="153,73,20,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" >
+        <DataGrid x:Name="dataGrid" Margin="153,73,20,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" SelectionChanged="dataGrid_SelectionChanged" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"
                           Binding="{Binding Id}"/>

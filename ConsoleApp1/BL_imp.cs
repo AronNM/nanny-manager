@@ -7,6 +7,7 @@ using BE;
 using GoogleMapsApi.Entities.Directions.Request;
 using GoogleMapsApi.Entities.Directions.Response;
 using GoogleMapsApi;
+using System.Threading;
 
 namespace BL
 {
@@ -307,11 +308,24 @@ namespace BL
 	#region helper fuctions
 	public Double get_distance(string address1, string address2)
 		{
+			double dist = 0;
+			Thread thread = new Thread(() => threaded_get_distance(address1, address2, ref dist));
+			thread.Start();
+			while (thread.IsAlive)
+			{
+				//do nothing. wait but still keep main thread alive
+			}
+			return dist;
+		}
+
+		public static void threaded_get_distance(string address1, string address2, ref double dist)
+		{
 			var drivingDirectionRequest = new DirectionsRequest { TravelMode = TravelMode.Driving, Origin = address1, Destination = address2, };
 
-			DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest); Route route = drivingDirections.Routes.First(); Leg leg = route.Legs.First();
+			DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
+			Route route = drivingDirections.Routes.First(); Leg leg = route.Legs.First();
 
-			return (int)(leg.Distance.Value)/1000;
+			dist = (int)(leg.Distance.Value) / 1000;
 		}
 
 		public List<Nanny> check_initial_match(Mother mother)
@@ -545,17 +559,17 @@ namespace BL
 				positives += "Recomendations available, ";
 			}
 
-			if (n.Rating > 3)
-			{
-				positives += n.Experience_Years + " stars rating, ";
-			}
+			//if (n.Rating > 3)
+			//{
+			//	positives += n.Experience_Years + " stars rating, ";
+			//}
 
 			if (distance <= 10)
 			{
-				positives += "Distance is only " + distance + " KM, ";
+				positives += "Close";
 			}
 
-			positives += "speaks " + n.Lang ;
+			//positives += "speaks " + n.Lang ;
 
 
 			return positives;
@@ -588,7 +602,7 @@ namespace BL
 
 			if (distance > 10)
 			{
-				negatives += "Far! distance is " + distance + " KM, ";
+				negatives += "Far!";// distance is " + distance + " KM, ";
 			}
 
 			return negatives;
@@ -611,11 +625,12 @@ namespace BL
 					timing_issues += day[i] + " ";
 				}
 			}
-			if (!first)
+
+			if (timing_issues.Length != 0)
 			{
-				timing_issues += "\n \t               ";
-				first = true;
+				return timing_issues;
 			}
+			
 			for (int i = 0; i < 6; i++)
 			{
 				if (mother.Needs_On_Day[i] && nanny.Works_On_Day[i])
@@ -631,11 +646,12 @@ namespace BL
 					}
 				}
 			}
-			if (!first)
+
+			if (timing_issues.Length != 0)
 			{
-				timing_issues += "\n \t               ";
-				first = true;
+				return timing_issues;
 			}
+
 			for (int i = 0; i < 6; i++)
 			{
 				if (mother.Needs_On_Day[i] && nanny.Works_On_Day[i])
@@ -651,6 +667,7 @@ namespace BL
 					}
 				}
 			}
+			
 			if (timing_issues == "")
 			{
 				timing_issues += "no issues.";

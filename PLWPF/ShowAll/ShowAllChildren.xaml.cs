@@ -62,5 +62,10 @@ namespace PLWPF.ShowAll
 		{
 			All_Checked(this, e);
 		}
+
+		private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+
+		}
 	}
 }

@@ -6,59 +6,82 @@
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="Nanny Matcher" Height="600" Width="600">
+        Title="Nanny Matcher" Height="600" Width="600" MinWidth="200" MinHeight="200">
+    <Window.Effect>
+        <DropShadowEffect></DropShadowEffect>
+    </Window.Effect>
 
     <Grid Background="GhostWhite">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="65*"/>
         </Grid.RowDefinitions>
-        <Button  Grid.Column="0" Grid.Row="0"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Nannies_Click">
-            <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto">
+
+
+       
+        <Button Grid.Row="0" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Contract_Wizard_Click">
+            <Grid Height="auto" Background="LightGray" Margin="5,5,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="9*"/>
                     <RowDefinition Height="4*"/>
-                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Image HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/nanny.gif"/>
-                <Label Name="Label1" Content="Manage Nannys" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
-            </Grid>
-        </Button>
-        <Button  Name="ManageMothers" Grid.Column="1" Grid.Row="0" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Mothers_Click">
-            <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <Image HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/mom.gif"/>
-                <Label Name="Label2" Content="Manage Mothers" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
-            </Grid>
-        </Button>
-        <Button   Grid.Column="1" Grid.Row="1" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Children_Click">
-            <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <Image HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/kids.gif"/>
-                <Label Name="Label3" Content="Manage Children" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
-            </Grid>
-        </Button>
-        <Button   Grid.Column="0" Grid.Row="1"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Contracts_Click">
-            <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <Image HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/contract.gif"/>
-                <Label Name="Label4" Content="Manage Contracts" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
+                <Image HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/wizard.gif"/>
+                <Label Name="wizard" Content="Contract Creator Wizard" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
             </Grid>
         </Button>
 
+        <Grid Background="GhostWhite"  Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button  Grid.Column="0" Grid.Row="0"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Nannies_Click">
+                <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Image HorizontalAlignment="Stretch" Margin="10,10,10,0" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/nanny.gif"/>
+                    <Label Name="label1" Content="Manage Nannys" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button  Name="ManageMothers" Grid.Column="1" Grid.Row="0" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Mothers_Click">
+                <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Image HorizontalAlignment="Stretch" Margin="10,10,10,0" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/mom.gif"/>
+                    <Label Name="Label2" Content="Manage Mothers" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button   Grid.Column="1" Grid.Row="1" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Children_Click">
+                <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Image HorizontalAlignment="Stretch" Margin="10,10,10,0" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/kids.gif"/>
+                    <Label Name="Label3" Content="Manage Children" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Button   Grid.Column="0" Grid.Row="1"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Contracts_Click">
+                <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Image HorizontalAlignment="Stretch" Margin="10,10,10,0" Grid.Row="0" VerticalAlignment="Stretch" gif:ImageBehavior.AnimatedSource="images/contract.gif"/>
+                    <Label Name="Label4" Content="Manage Contracts" FontFamily="Ariel" Foreground="Gray" FontSize="25"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
 
 
+        </Grid>
+        
     </Grid>
 </Window>
