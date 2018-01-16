@@ -23,7 +23,7 @@
                           Binding="{Binding Special_Needs}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="chooseNanny1" Content="Bellow is a list of the nannies which we believe form the best match for the selected child." Style="{DynamicResource SmallTextStyle}" Margin="40,320,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="chooseNanny1" Content="Bellow is a list of the most suitable nanniesfor the selected child." Style="{DynamicResource SmallTextStyle}" Margin="40,320,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Label x:Name="chooseNanny2" Content="Please select a nanny from the list:" Style="{DynamicResource SmallTextStyle}" Margin="40,343,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <DataGrid x:Name="dataGridRelevantNannies" IsReadOnly="True" Margin="10,370,10,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" MouseDoubleClick="selectedChildRowsButton_Click" >
             <DataGrid.Columns>
@@ -46,7 +46,7 @@
         <TextBox x:Name="distance"  Style="{DynamicResource SmallTextStyle}" Margin="140,605,0,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="120" BorderThickness="0" FontWeight="bold"/>
 
         <Label x:Name="namesLabel" Content="Contract Between:" Style="{DynamicResource SmallTextStyle}" Margin="-140,630,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="names"  Style="{DynamicResource SmallTextStyle}" Margin="140,635,0,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="120" BorderThickness="0" FontWeight="bold"/>
+        <TextBox x:Name="names"  Style="{DynamicResource SmallTextStyle}" Margin="270,635,0,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="260" BorderThickness="0" FontWeight="bold"/>
 
         <TextBox x:Name="pros"  Style="{DynamicResource SmallTextStyle}" Margin="40,665,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0"/>
         <TextBox x:Name="cons"  Style="{DynamicResource SmallTextStyle}" Margin="40,695,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0"/>
