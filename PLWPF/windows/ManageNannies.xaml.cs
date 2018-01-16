@@ -2,6 +2,7 @@
 using PLWPF.delete;
 using System.Windows;
 using PLWPF.Add;
+using PLWPF.edit;
 
 namespace PLWPF
 {
@@ -24,8 +25,8 @@ namespace PLWPF
 
 		private void Edit_Nanny_Click(object sender, RoutedEventArgs e)
 		{
-			//EditNanny edit_Nannies = new EditNanny();
-			//edit_Nannies.Show();
+			EditNanny edit_Nannies = new EditNanny();
+			edit_Nannies.Show();
 			Close();
 		}
 
