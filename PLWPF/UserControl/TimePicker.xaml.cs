@@ -1,5 +1,4 @@
-﻿using BL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PLWPF.Add
+namespace PLWPF.MyUserControl
 {
-	/// <summary>
-	/// Interaction logic for AddNewMother.xaml
-	/// </summary>
-	public partial class AddNewMother : Window
-	{
-        IBL bl;
-        public AddNewMother()
-		{
-            bl = factoryBL.get_bl();
+    /// <summary>
+    /// Interaction logic for TimePicker.xaml
+    /// </summary>
+    public partial class TimePicker : UserControl
+    {
+        public TimePicker()
+        { 
             InitializeComponent();
-
-		}
-	}
+        }
+    }
 }

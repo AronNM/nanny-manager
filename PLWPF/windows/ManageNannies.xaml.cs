@@ -1,6 +1,7 @@
 ﻿using PLWPF.ShowAll;
 using PLWPF.delete;
 using System.Windows;
+using PLWPF.Add;
 
 namespace PLWPF
 {
@@ -16,8 +17,8 @@ namespace PLWPF
 
 		private void Add_Nanny_Click(object sender, RoutedEventArgs e)
 		{
-			//AddNewNanny manage_Nannies = new AddNewNanny();
-			//manage_Nannies.Show();
+			AddNewNanny add_Nannies = new AddNewNanny();
+			add_Nannies.Show();
 			Close();
 		}
 

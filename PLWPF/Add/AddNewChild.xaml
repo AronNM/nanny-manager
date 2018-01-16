@@ -31,10 +31,10 @@
             <Label Name="Label7" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="6" VerticalAlignment="Center"/>
             <Label Name="Label8" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Center"/>
             <Label Name="Label9" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="8" VerticalAlignment="Center"/>
-            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" Width="87" Margin="25,3,24,3" />
-            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" Width="87" Margin="25,3,24,3" />
-            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" Width="87" Margin="25,3,24,3" />
-            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="TextBox" Width="87" Margin="25,3,24,3" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Width="87" Margin="25,3,24,3" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Width="87" Margin="25,3,24,3" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Width="87" Margin="25,3,24,3" />
+            <TextBox FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Width="87" Margin="25,3,24,3" />
             <CheckBox x:Name="checkBox" Content="Yes" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="10,4,0,0" Grid.Row="4" VerticalAlignment="Top" Width="42"/>
             <CheckBox x:Name="checkBox1" Content="No" Grid.Column="1" HorizontalAlignment="Left" Margin="76,4,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="-0.041,0.965"/>
 

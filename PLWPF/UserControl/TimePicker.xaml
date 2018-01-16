@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="PLWPF.MyUserControl.TimePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PLWPF.MyUserControl"
+             mc:Ignorable="d" Height="39.604" Width="91.089">
+    <Grid HorizontalAlignment="Right" Width="91">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20" Margin="10,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="20" Margin="50,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.669,1.205" Grid.RowSpan="2"/>
+        <Label x:Name="label" Content=":" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Top" Width="14" RenderTransformOrigin="0.257,-0.05" Height="30" FontSize="18"/>
+
+    </Grid>
+</UserControl>

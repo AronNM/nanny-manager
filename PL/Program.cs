@@ -156,7 +156,7 @@ namespace PL
 							Console.WriteLine("Second Address: ");
 							addMother.Second_Address = Console.ReadLine();
 							Console.WriteLine("Max travel distance: ");
-							addMother.Max_Travel_Distance = double.Parse(Console.ReadLine());
+							addMother.Max_Travel_Distance = (int)double.Parse(Console.ReadLine());
 							Console.WriteLine("Telephone Number: ");
 							addMother.Telephone_Number = Console.ReadLine();
 
