@@ -23,7 +23,7 @@
                           Binding="{Binding Special_Needs}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="chooseNanny1" Content="Bellow is a list of the most suitable nanniesfor the selected child." Style="{DynamicResource SmallTextStyle}" Margin="40,320,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="chooseNanny1" Content="Bellow is a list of the most suitable nannies for the selected child." Style="{DynamicResource SmallTextStyle}" Margin="40,320,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Label x:Name="chooseNanny2" Content="Please select a nanny from the list:" Style="{DynamicResource SmallTextStyle}" Margin="40,343,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <DataGrid x:Name="dataGridRelevantNannies" IsReadOnly="True" Margin="10,370,10,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" MouseDoubleClick="selectedChildRowsButton_Click" >
             <DataGrid.Columns>

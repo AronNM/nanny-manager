@@ -10,6 +10,8 @@
     <Window.Effect>
         <DropShadowEffect></DropShadowEffect>
     </Window.Effect>
+    
+  
 
     <Grid Background="GhostWhite">
         <Grid.RowDefinitions>
@@ -18,9 +20,22 @@
         </Grid.RowDefinitions>
 
 
-       
-        <Button Grid.Row="0" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Contract_Wizard_Click">
-            <Grid Height="auto" Background="LightGray" Margin="5,5,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+        <Button Name="wizardButton" Grid.Row="0" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Contract_Wizard_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="bdr_main" BorderThickness="7" BorderBrush="Gray" HorizontalAlignment="Stretch" Height="auto" Background="LightGray"  VerticalAlignment="Stretch" Width="auto">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bdr_main" Property="Background" Value="LightGray"/>
+                            <Setter TargetName="bdr_main" Property="BorderBrush" Value="CornflowerBlue"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+            <Grid Name="topButtonGrid" Height="auto" Background="LightGray" Margin="5,5,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="9*"/>
                     <RowDefinition Height="4*"/>
@@ -40,6 +55,19 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Button  Grid.Column="0" Grid.Row="0"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Nannies_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bdr_main" BorderThickness="7" BorderBrush="Gray" HorizontalAlignment="Stretch" Height="auto" Background="LightGray"  VerticalAlignment="Stretch" Width="auto">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bdr_main" Property="Background" Value="LightGray"/>
+                                <Setter TargetName="bdr_main" Property="BorderBrush" Value="CornflowerBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
                 <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="9*"/>
@@ -50,6 +78,19 @@
                 </Grid>
             </Button>
             <Button  Name="ManageMothers" Grid.Column="1" Grid.Row="0" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Mothers_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bdr_main" BorderThickness="7" BorderBrush="Gray" HorizontalAlignment="Stretch" Height="auto" Background="LightGray"  VerticalAlignment="Stretch" Width="auto">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bdr_main" Property="Background" Value="LightGray"/>
+                                <Setter TargetName="bdr_main" Property="BorderBrush" Value="CornflowerBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
                 <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="9*"/>
@@ -60,6 +101,19 @@
                 </Grid>
             </Button>
             <Button   Grid.Column="1" Grid.Row="1" BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Children_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bdr_main" BorderThickness="7" BorderBrush="Gray" HorizontalAlignment="Stretch" Height="auto" Background="LightGray"  VerticalAlignment="Stretch" Width="auto">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bdr_main" Property="Background" Value="LightGray"/>
+                                <Setter TargetName="bdr_main" Property="BorderBrush" Value="CornflowerBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
                 <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="9*"/>
@@ -70,6 +124,19 @@
                 </Grid>
             </Button>
             <Button   Grid.Column="0" Grid.Row="1"  BorderThickness="7" HorizontalAlignment="Stretch" Height="auto" Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Stretch" Width="auto" Click="Manage_Contracts_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bdr_main" BorderThickness="7" BorderBrush="Gray" HorizontalAlignment="Stretch" Height="auto" Background="LightGray"  VerticalAlignment="Stretch" Width="auto">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bdr_main" Property="Background" Value="LightGray"/>
+                                <Setter TargetName="bdr_main" Property="BorderBrush" Value="CornflowerBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
                 <Grid Height="auto" Background="LightGray" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="auto">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="9*"/>

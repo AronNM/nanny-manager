@@ -58,5 +58,6 @@ namespace PLWPF
 			CreateContractWindow wizard = new CreateContractWindow();
 			wizard.ShowDialog();
 		}
+
 	}
 }
