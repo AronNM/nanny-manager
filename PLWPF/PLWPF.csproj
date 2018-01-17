@@ -63,6 +63,9 @@
     <Compile Include="Add\AddNewChild.xaml.cs">
       <DependentUpon>AddNewChild.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Add\AddNewContract.xaml.cs">
+      <DependentUpon>AddNewContract.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Add\AddNewMother.xaml.cs">
       <DependentUpon>AddNewMother.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,15 @@
     </Compile>
     <Compile Include="delete\DeleteNanny.xaml.cs">
       <DependentUpon>DeleteNanny.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="edit\EditChild.xaml.cs">
+      <DependentUpon>EditChild.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="edit\EditContract.xaml.cs">
+      <DependentUpon>EditContract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="edit\EditMother.xaml.cs">
+      <DependentUpon>EditMother.xaml</DependentUpon>
     </Compile>
     <Compile Include="edit\EditNanny.xaml.cs">
       <DependentUpon>EditNanny.xaml</DependentUpon>
@@ -118,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Add\AddNewContract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Add\AddNewMother.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +155,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="delete\DeleteNanny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="edit\EditChild.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="edit\EditContract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="edit\EditMother.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

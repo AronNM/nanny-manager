@@ -95,6 +95,7 @@ namespace PLWPF.Add
             else temp.Needs_On_Day[5] = false;
 
             bl.add_mother(temp);
+            Close();
         }
     }
 }

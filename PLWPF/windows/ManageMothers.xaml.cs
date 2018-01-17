@@ -2,6 +2,7 @@
 using PLWPF.delete;
 using System.Windows;
 using PLWPF.Add;
+using PLWPF.edit;
 
 namespace PLWPF.windows
 {
@@ -24,9 +25,9 @@ namespace PLWPF.windows
 
 		private void Edit_Mother_Click(object sender, RoutedEventArgs e)
 		{
-			//EditMother edit_mothers = new EditMother();
-			//edit_mothers.Show();
-			Close();
+            EditMother edit_mothers = new EditMother();
+            edit_mothers.Show();
+            Close();
 		}
 
 		private void Delete_Mother_Click(object sender, RoutedEventArgs e)

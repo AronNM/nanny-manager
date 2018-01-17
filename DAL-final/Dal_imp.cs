@@ -118,10 +118,23 @@ namespace DAL_final
                 }
             }
         }
-		#endregion
 
-		#region mother fuctions
-		public void add_mother(Mother m)
+        public void update_nanny(int id, Nanny temp)
+        {
+            foreach (var item in DataSource.Nannys_List)
+            {
+                if (id == item.Id)
+                {
+                    DataSource.Nannys_List.Remove(item);
+                    DataSource.Nannys_List.Add(temp);
+                    return;
+                }
+            }
+        }
+        #endregion
+
+            #region mother fuctions
+        public void add_mother(Mother m)
         {
             foreach (var item in DataSource.Mothers_List)
             {
@@ -213,6 +226,18 @@ namespace DAL_final
                 }
             }
         }
+        public void update_mother(int id,Mother temp)
+        {
+            foreach (var item in DataSource.Mothers_List)
+            {
+                if (id == item.Id)
+                {
+                    DataSource.Mothers_List.Remove(item);
+                    DataSource.Mothers_List.Add(temp);
+                    return;
+                }
+            }
+        }
         #endregion
 
         #region child fuctions
@@ -298,9 +323,21 @@ namespace DAL_final
             }
             throw new Exception("ID doesn't exists!");
         }
+        public void update_child(int id, Child temp)
+        {
+            foreach (var item in DataSource.Children_List)
+            {
+                if (id == item.Id)
+                {
+                    DataSource.Children_List.Remove(item);
+                    DataSource.Children_List.Add(temp);
+                    break;
+                }
+            }
+        }
         #endregion
 
-        #region contract fuctions
+            #region contract fuctions
         public void add_contract(Contract c)
         {
             
@@ -351,9 +388,21 @@ namespace DAL_final
             //if reached here - 
             //throw new Exception("a contract with this number doesn't exists!");
         }
+        public void update_contract(int number, Contract temp)
+        {
+            foreach (Contract item in DataSource.Contracts_List)
+            {
+                if (number == item.Number)
+                {
+                    DataSource.Contracts_List.Remove(item);
+                    DataSource.Contracts_List.Add(temp);
+                    break;
+                }
+            }
+        }
         #endregion
 
-        #region get lists fuctions
+            #region get lists fuctions
         public List<Nanny> get_nanny_list()
         {
 			var list = new List<Nanny>(DataSource.Nannys_List);

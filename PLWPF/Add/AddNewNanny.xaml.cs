@@ -28,16 +28,16 @@ namespace PLWPF.Add
         {
             InitializeComponent();
             bl = factoryBL.get_bl();
-            for (int i = 0; i < 5; i++)
-            {
-                ComboBoxItem newItem = new ComboBoxItem();
-                BE.Language l = (BE.Language)i;
-                newItem.Content = l.ToString();
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    ComboBoxItem newItem = new ComboBoxItem();
+            //    BE.Language l = (BE.Language)i;
+            //    newItem.Content = l.ToString();
   
-                comboBox.Items.Add(newItem);
+            //    comboBox.Items.Add(newItem);
 
 
-            }
+            //}
             
         }
 
@@ -77,7 +77,7 @@ namespace PLWPF.Add
                 temp.Monthly_Price = int.Parse(PriceBox.Text);
             }
             
-            temp.Lang = (Language)Enum.Parse(typeof(Language),comboBox.Text);
+            //temp.Lang = (Language)Enum.Parse(typeof(Language),comboBox.Text);
             temp.Max_Children = int.Parse(NUmberChildrenBox.Text);
             temp.Max_Child_Age = int.Parse(MaxAgeBox.Text);
             temp.Min_Child_Age = int.Parse(MinAgeBox.Text);
@@ -138,8 +138,29 @@ namespace PLWPF.Add
             }
             else temp.Works_On_Day[5] = false;
 
-            bl.add_nanny(temp);
+            if(hebrewbox.IsChecked==true)
+            {
+                temp.Lang.Add(BE.Language.HEBREW);
+            }
+            if (englishbox.IsChecked == true)
+            {
+                temp.Lang.Add(BE.Language.ENGLISH);
+            }
+            if (russianbox.IsChecked == true)
+            {
+                temp.Lang.Add( BE.Language.RUSSIAN);
+            }
+            if (arabicbox.IsChecked == true)
+            {
+                temp.Lang.Add(BE.Language.ARABIC);
+            }
+            if (yidishbox.IsChecked == true)
+            {
+                temp.Lang.Add(BE.Language.YIDDISH);
+            }
 
+            bl.add_nanny(temp);
+            Close();
 
 
         }

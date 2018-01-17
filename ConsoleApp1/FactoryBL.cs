@@ -40,10 +40,10 @@ namespace BL
 			n1.Min_Child_Age = 5;
 			n1.Vacation_Like_Tamat = true;
 			n1.Works_On_Day = new bool[] { true, true, true, true, true, false, false };
-			n1.Work_Hours = new TimeSpan[2, 6] { {new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0)}
-												,{new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0)} };
+			n1.Work_Hours = new TimeSpan[2, 6] { {new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0)}
+												,{new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0)} };
 			n1.Experience_Years = 1;
-			n1.Lang = Language.YIDDISH;
+			n1.Lang.Add(Language.YIDDISH);
 			n1.Recommendations = "Zelda is the Besat! We love her! from Pesha";
 			n1.Telephone_Number = "058-432-1109";
 			n1.Rating = 5;
@@ -66,10 +66,10 @@ namespace BL
 			n2.Min_Child_Age = 3;
 			n2.Vacation_Like_Tamat = true;
 			n2.Works_On_Day = new bool[] { false, true, true, true, true, true, false };
-			n2.Work_Hours = new TimeSpan[2, 6] { { new TimeSpan(0, 8, 30), new TimeSpan(0, 8, 30), new TimeSpan(0, 8, 30), new TimeSpan(0, 8, 30), new TimeSpan(0, 8, 30), new TimeSpan(0, 8, 30) }
-												,{new TimeSpan(0,14,0), new TimeSpan(0,14,0), new TimeSpan(0,14,0), new TimeSpan(0,14,0), new TimeSpan(0,14,0), new TimeSpan(0,14,0)} };
+			n2.Work_Hours = new TimeSpan[2, 6] { { new TimeSpan(8, 30,0), new TimeSpan(8, 30,0), new TimeSpan(8, 30,0), new TimeSpan(8, 30,0), new TimeSpan(8, 30,0), new TimeSpan(8, 30,0) }
+												,{new TimeSpan(14,0,0), new TimeSpan(14,0,0), new TimeSpan(14,0,0), new TimeSpan(14,0,0), new TimeSpan(14,0,0), new TimeSpan(14,0,0)} };
 			n2.Experience_Years = 3;
-			n2.Lang = Language.YIDDISH;
+			n2.Lang.Add( Language.YIDDISH);
 			n2.Recommendations = "Fruma Fruma , What we do without her! She is the #1 ganenet!";
 			n2.Telephone_Number = "052-987-1908";
 			n2.Rating = 4;
@@ -92,10 +92,10 @@ namespace BL
 			n3.Min_Child_Age = 10;
 			n3.Vacation_Like_Tamat = false;
 			n3.Works_On_Day = new bool[] { true, true, true, true, true, true, false };
-			n3.Work_Hours = new TimeSpan[2, 6] { {new TimeSpan(0,7,15), new TimeSpan(0,7,15), new TimeSpan(0,7,15), new TimeSpan(0,7,15), new TimeSpan(0,7,15), new TimeSpan(0,7,15) }
-												,{new TimeSpan(0,17,0), new TimeSpan(0,17,0), new TimeSpan(0,17,0), new TimeSpan(0,17,0), new TimeSpan(0,17,0), new TimeSpan(0,17,0) } };
+			n3.Work_Hours = new TimeSpan[2, 6] { {new TimeSpan(7,15,0), new TimeSpan(7,15,0), new TimeSpan(7,15,0), new TimeSpan(7,15,0), new TimeSpan(7,15,0), new TimeSpan(7,15,0) }
+												,{new TimeSpan(17,0,0), new TimeSpan(17,0,0), new TimeSpan(17,0,0), new TimeSpan(17,0,0), new TimeSpan(17,0,0), new TimeSpan(17,0,0) } };
 			n3.Experience_Years = 31;
-			n3.Lang = Language.HEBREW;
+			n3.Lang.Add( Language.HEBREW);
 			n3.Recommendations = "Tova was my grandmothers ganenet, my ganent and now my daughters ganenet. She loves the children like her own. We highly recommend her!";
 			n3.Telephone_Number = "02-995-1128";
 			n3.Rating = 4.7;
@@ -184,8 +184,8 @@ namespace BL
 			m1.Home_Address = "Nahal Refaim 38, Beit Shemesh, Israel";
 			m1.Max_Travel_Distance = 10;
 			m1.Needs_On_Day = new bool[] { true, true, true, true, true, false, false };
-			m1.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0)}
-												,{new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0)} };
+			m1.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0)}
+												,{new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0)} };
 			m1.Searching_Address = "Nahal Refaim 38, Beit Shemesh, Israel";
 			m1.Telephone_Number = "02-991-3245";
 			bl.add_mother(m1);
@@ -199,8 +199,8 @@ namespace BL
 			m2.Home_Address = "21 Yafo St., Jerusalem, Israel";
 			m2.Max_Travel_Distance = 100;
 			m2.Needs_On_Day = new bool[] { false, false, true, true, false, false, false };
-			m2.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,10,0), new TimeSpan(0,10,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0)}
-												,{new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0)} };
+			m2.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(10,0,0), new TimeSpan(10,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0)}
+												,{new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0)} };
 			m2.Searching_Address = "21 Yafo St., Jerusalem, Israel";
 			m2.Telephone_Number = "055-253-9487";
 			bl.add_mother(m2);
@@ -214,8 +214,8 @@ namespace BL
 			m3.Home_Address = "10 Beit Hadfus, Jerusalem, Israel";
 			m3.Max_Travel_Distance = 50;
 			m3.Needs_On_Day = new bool[] { false, true, true, true, true, true, false };
-			m3.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0)}
-												,{new TimeSpan(0,16,0), new TimeSpan(0,16,0), new TimeSpan(0,16,0), new TimeSpan(0,16,0), new TimeSpan(0,16,0), new TimeSpan(0,16,0) } };
+			m3.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0)}
+												,{new TimeSpan(16,0,0), new TimeSpan(16,0,0), new TimeSpan(16,0,0), new TimeSpan(16,0,0), new TimeSpan(16,0,0), new TimeSpan(16,0,0) } };
 			m3.Searching_Address = "10 King George, Jerusalem, Israel";
 			m3.Telephone_Number = "02-553-3981";
 			bl.add_mother(m3);
@@ -244,8 +244,8 @@ namespace BL
 			m5.Home_Address = "20 Malchei Yisrael, Jerusalem, Israel";
 			m5.Max_Travel_Distance = 30;
 			m5.Needs_On_Day = new bool[] { true, true, true, true, true, false, false };
-			m5.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0), new TimeSpan(0,8,0)}
-												,{new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0), new TimeSpan(0,15,0)} };
+			m5.Needs_Hours = new TimeSpan[2, 6] { {new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0), new TimeSpan(8,0,0)}
+												,{new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0), new TimeSpan(15,0,0)} };
 			m5.Home_Address = "20 Malchei Yisrael, Jerusalem, Israel";
 			m5.Telephone_Number = "02-543-0781";
 			bl.add_mother(m5);

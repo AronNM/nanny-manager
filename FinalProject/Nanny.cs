@@ -31,10 +31,11 @@ namespace BE
 		public string Recommendations { get; set; }
 		//Custom Attributes
 		public double Rating { get; set; }
-		public Language Lang { get; set; }
+		public List<Language> Lang { get; set; }
         public Nanny()
         {
             bool[] b = new bool[6];
+            Lang = new List<Language>();
             Works_On_Day = b;
             TimeSpan[,] t = new TimeSpan[6, 2];
             Work_Hours = t;

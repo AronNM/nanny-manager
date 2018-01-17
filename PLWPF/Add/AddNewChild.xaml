@@ -22,11 +22,11 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Label Name="Label1" Content="Id" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center"/>
-            <Label Name="Label2" Content="Mother Id" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
-            <Label Name="Label3" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center"/>
-            <Label Name="Label4" Content="Birth Date" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center"/>
-            <Label Name="Label5" Content="Special Needs" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center"/>
+            <Label Name="Label1" Style="{DynamicResource SmallTextStyle}" Content="Id" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center"/>
+            <Label Name="Label2" Style="{DynamicResource SmallTextStyle}" Content="Mother Id" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center"/>
+            <Label Name="Label3" Style="{DynamicResource SmallTextStyle}" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center"/>
+            <Label Name="Label4" Style="{DynamicResource SmallTextStyle}" Content="Birth Date" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center"/>
+            <Label Name="Label5" Style="{DynamicResource SmallTextStyle}" Content="Special Needs" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center"/>
             <Label x:Name="SpecialNeedsLabel" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Bottom" IsEnabled="False" Margin="10,0,10,10" Width="116" Height="41" Grid.RowSpan="2"/>
             <Label Name="Label7" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="6" VerticalAlignment="Center"/>
             <Label Name="Label8" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Center"/>
@@ -34,8 +34,8 @@
             <TextBox x:Name="IdBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Width="87" Margin="25,3,24,3" />
             <TextBox x:Name="MotherIdBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Width="87" Margin="25,3,24,3" />
             <TextBox x:Name="FirstNameBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Width="87" Margin="25,3,24,3" />
-            <RadioButton x:Name="SpecialNeedscheckBox" Content="Yes" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="10,4,0,0" Grid.Row="4" VerticalAlignment="Top" Width="42" Checked="SpecialNeedsChecked"/>
-            <RadioButton x:Name="NoSpecialNeedsCheckBox" Content="No" Grid.Column="1" HorizontalAlignment="Left" Margin="76,4,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="-0.041,0.965"/>
+            <RadioButton x:Name="SpecialNeedscheckBox" Style="{DynamicResource SmallTextStyle}" Content="Yes" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="25,4,0,0" Grid.Row="4" VerticalAlignment="Top" Width="42" Checked="SpecialNeedsChecked"/>
+            <RadioButton x:Name="NoSpecialNeedsCheckBox" Style="{DynamicResource SmallTextStyle}" Content="No" Grid.Column="1" HorizontalAlignment="Left" Margin="77,5,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="-0.041,0.965"/>
             <TextBox x:Name="SpecialNeedsText" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,2,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="{Binding ElementName=SpecialNeedscheckBox,Path=IsChecked}"/>
             <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="58,0,0,0" Grid.Row="5" VerticalAlignment="Top"/>
             <Button x:Name="button" Grid.ColumnSpan="2" Content="Submit" HorizontalAlignment="Left" Margin="91,1,0,0" Grid.Row="7" VerticalAlignment="Top" Width="75" Click="button_Click"/>

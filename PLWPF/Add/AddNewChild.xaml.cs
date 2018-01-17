@@ -51,7 +51,7 @@ namespace PLWPF.Add
                 temp.Special_Needs = false;
             }
             bl.add_child(temp);
-
+            Close();
         }
     }
 }

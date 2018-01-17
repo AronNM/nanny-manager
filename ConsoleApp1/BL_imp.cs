@@ -50,6 +50,10 @@ namespace BL
         {
             d.update_nanny(i, s, s2,t);
         }
+        public void update_nanny(int id, Nanny temp)
+        {
+            d.update_nanny(id, temp);
+        }
         #endregion
 
         #region mother fuctions
@@ -68,6 +72,10 @@ namespace BL
         public void update_mother(int id, int attribute, bool[] b,TimeSpan[,] t)
         {
             d.update_mother(id,attribute,b,t);
+        }
+        public void update_mother(int id, Mother temp)
+        {
+            d.update_mother(id,temp);
         }
 
         #endregion
@@ -88,6 +96,10 @@ namespace BL
         public void update_child(int id, int attribute, string s, string s2)
         {
             d.update_child(id, attribute, s, s2);
+        }
+        public void update_child(int id, Child temp)
+        {
+            d.update_child(id, temp);
         }
         #endregion
 
@@ -187,8 +199,12 @@ namespace BL
 				}
 			}
 		}
+        public void add_contract_manually(Contract c)
+        {
+            d.add_contract(c);
+        }
 
-		public void delete_contract(int num)
+        public void delete_contract(int num)
 		{
 			d.delete_contract(num);
 		}
@@ -196,10 +212,14 @@ namespace BL
 		{
 			d.update_contract(number,attribute,content);
 		}
-		#endregion
+        public void update_contract(int number, Contract c)
+        {
+            d.update_contract(number,c);
+        }
+        #endregion
 
-		#region list fuctions
-		public List<Nanny> get_nanny_list()
+        #region list fuctions
+        public List<Nanny> get_nanny_list()
 		{
 			return d.get_nanny_list();
 		}

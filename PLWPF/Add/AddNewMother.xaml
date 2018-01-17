@@ -7,14 +7,18 @@
         xmlns:control="clr-namespace:PLWPF"
         xmlns:MyUserControl="clr-namespace:PLWPF.MyUserControl" x:Class="PLWPF.Add.AddNewMother"
         mc:Ignorable="d"
-        Title="AddNewMother" Height="800" Width="500">
-    <Grid>
+        Title="AddNewMother" Height="684" Width="500">
+    <Grid Margin="0,0,0,-344">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="55*"/>
             <ColumnDefinition Width="18*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="10,37,10,23" Grid.ColumnSpan="2">
+        <Grid Margin="10,10,10,189" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
@@ -28,13 +32,13 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="Label1" Content="Id" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center"/>
-            <Label x:Name="Label2" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Margin="85,31,84,34"/>
-            <Label x:Name="Label3" Content="Last Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center"/>
-            <Label x:Name="Label4" Content="Home Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center"/>
-            <Label x:Name="Label5" Content="Second Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center"/>
-            <Label x:Name="Label6" Content="Max travel distance" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center"/>
-            <Label x:Name="Label7" Content="Which days she needs " FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="6" VerticalAlignment="Center" Margin="62,2,44,62"/>
+            <Label x:Name="Label1" Style="{DynamicResource SmallTextStyle}" Content="Id" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center"/>
+            <Label x:Name="Label2" Style="{DynamicResource SmallTextStyle}" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Margin="80,15,68,19" Height="24" Width="88"/>
+            <Label x:Name="Label3" Style="{DynamicResource SmallTextStyle}" Content="Last Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center"/>
+            <Label x:Name="Label4" Style="{DynamicResource SmallTextStyle}" Content="Home Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center"/>
+            <Label x:Name="Label5" Style="{DynamicResource SmallTextStyle}" Content="Second Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center"/>
+            <Label x:Name="Label6" Style="{DynamicResource SmallTextStyle}" Content="Max travel distance" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center"/>
+            <Label x:Name="Label7" Style="{DynamicResource SmallTextStyle}" Content="Which days the mother needs nanny? " FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="6" VerticalAlignment="Center" Margin="186,0,10,37" Width="276" Height="30" Grid.ColumnSpan="2"/>
             <Label x:Name="Label8" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Center"/>
             <Label x:Name="Label9" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="8" VerticalAlignment="Center"/>
             <TextBox x:Name="IdBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " />
@@ -43,25 +47,25 @@
             <TextBox x:Name="AddressBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="80,15,80,16" Width="76" />
             <TextBox x:Name="SecondAddressBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="80,16" Width="76" />
             <TextBox x:Name="MaxTravelDistanceBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="80,16,80,15" Width="76" />
-            <CheckBox x:Name="SundayButton" Content="Sunday" HorizontalAlignment="Left" Height="19" Margin="218,88,0,0" Grid.Row="5" VerticalAlignment="Top" Width="62" RenderTransformOrigin="2.093,0.735" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-            <CheckBox x:Name="MondayButton" Content="Monday" HorizontalAlignment="Left" Margin="218,29,0,0" Grid.Row="6" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.527,1.18" Grid.ColumnSpan="2"/>
-            <CheckBox x:Name="TuesdayButton" Content="Tuesday" HorizontalAlignment="Left" Height="19" Margin="218,59,0,0" Grid.Row="6" VerticalAlignment="Top" Width="67" Grid.ColumnSpan="2"/>
-            <CheckBox x:Name="WednesdayButton" Content="Wednesday" HorizontalAlignment="Left" Height="20" Margin="217,0,0,0" Grid.Row="7" VerticalAlignment="Top" Width="85" Grid.ColumnSpan="2"/>
-            <CheckBox x:Name="ThursdayButton" Content="Thursday" HorizontalAlignment="Left" Margin="216,31,0,0" Grid.Row="7" VerticalAlignment="Top" Height="23" Width="69" Grid.ColumnSpan="2"/>
-            <CheckBox x:Name="FridayButton" Content="Friday" HorizontalAlignment="Left" Height="20" Margin="217,59,0,0" Grid.Row="7" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-            <MyUserControl:TimePicker x:Name="Sundaystart" Grid.Column="1" Margin="49,73,96,64" Grid.Row="5" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=SundayButton}" Grid.RowSpan="2"/>
-            <MyUserControl:TimePicker x:Name="SundayEnd" Grid.Column="1" Margin="135,73,10,64" Grid.Row="5" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=SundayButton}" RenderTransformOrigin="1.242,1.425" Grid.RowSpan="2"/>
-            <MyUserControl:TimePicker x:Name="MondayStart" Grid.Column="1" Margin="49,18,96,30" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=MondayButton}"/>
-            <MyUserControl:TimePicker x:Name="TuesdayStart" Grid.Column="1" Margin="49,48,96,0" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=TuesdayButton}"/>
-            <MyUserControl:TimePicker x:Name="WednesdayStart" Grid.Column="1" Margin="49,77,96,60" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=WednesdayButton}" Grid.RowSpan="2"/>
-            <MyUserControl:TimePicker x:Name="ThursdayStart" Grid.Column="1" Margin="49,20,96,29" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=ThursdayButton}"/>
-            <MyUserControl:TimePicker x:Name="FridayStart" Grid.Column="1" Margin="49,48,96,1" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=FridayButton}"/>
-            <MyUserControl:TimePicker x:Name="TuesdayEnd" Grid.Column="1" Margin="135,48,10,0" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=TuesdayButton}" RenderTransformOrigin="0.473,-0.2"/>
-            <MyUserControl:TimePicker x:Name="MondayEnd" Grid.Column="1" Margin="135,18,10,30" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=MondayButton}" RenderTransformOrigin="0.473,-0.2"/>
-            <MyUserControl:TimePicker x:Name="WednesdayEnd" Grid.Column="1" Margin="135,77,10,60" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=WednesdayButton}" RenderTransformOrigin="0.473,-0.2" Grid.RowSpan="2"/>
-            <MyUserControl:TimePicker x:Name="ThursdayEnd" Grid.Column="1" Margin="135,20,10,29" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=ThursdayButton}" RenderTransformOrigin="0.473,-0.2"/>
-            <MyUserControl:TimePicker x:Name="FridayEnd" Grid.Column="1" Margin="135,49,10,0" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=FridayButton}" RenderTransformOrigin="0.473,-0.2"/>
-            <Button x:Name="button" Grid.ColumnSpan="2" Content="Submit" HorizontalAlignment="Left" Margin="191,79,0,-15" Grid.Row="7" VerticalAlignment="Top" Width="75" Height="25" RenderTransformOrigin="-0.093,0.72" Click="button_Click"/>
+            <CheckBox x:Name="SundayButton" Style="{DynamicResource SmallTextStyle}" Content="Sunday" HorizontalAlignment="Left" Height="19" Margin="186,38,0,0" Grid.Row="6" VerticalAlignment="Top" Width="88" RenderTransformOrigin="2.093,0.735" Grid.ColumnSpan="2" />
+            <CheckBox x:Name="MondayButton" Style="{DynamicResource SmallTextStyle}" Content="Monday" HorizontalAlignment="Left" Margin="186,64,0,0" Grid.Row="6" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.527,1.18" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <CheckBox x:Name="TuesdayButton" Style="{DynamicResource SmallTextStyle}" Content="Tuesday" HorizontalAlignment="Left" Height="19" Margin="186,26,0,0" Grid.Row="7" VerticalAlignment="Top" Width="67" Grid.ColumnSpan="2" />
+            <CheckBox x:Name="WednesdayButton" Style="{DynamicResource SmallTextStyle}" Content="Wednesday" HorizontalAlignment="Left" Height="20" Margin="186,53,0,0" Grid.Row="7" VerticalAlignment="Top" Width="101" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            <CheckBox x:Name="ThursdayButton" Style="{DynamicResource SmallTextStyle}" Content="Thursday" HorizontalAlignment="Left" Margin="186,18,0,0" Grid.Row="8" VerticalAlignment="Top" Height="23" Width="86" Grid.ColumnSpan="2" />
+            <CheckBox x:Name="FridayButton" Style="{DynamicResource SmallTextStyle}" Content="Friday" HorizontalAlignment="Left" Height="20" Margin="186,46,0,0" Grid.Row="8" VerticalAlignment="Top"  Width="63" Grid.ColumnSpan="2"/>
+            <MyUserControl:TimePicker x:Name="Sundaystart" Grid.Column="1" Margin="30,23,115,3" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=SundayButton}" />
+            <MyUserControl:TimePicker x:Name="SundayEnd" Grid.Column="1" Margin="126,23,19,3" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=SundayButton}" RenderTransformOrigin="1.242,1.425" />
+            <MyUserControl:TimePicker x:Name="MondayStart" Grid.Column="1" Margin="30,52,115,40" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=MondayButton}" Grid.RowSpan="2"/>
+            <MyUserControl:TimePicker x:Name="TuesdayStart" Grid.Column="1" Margin="30,14,115,65" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=TuesdayButton}" Grid.RowSpan="2"/>
+            <MyUserControl:TimePicker x:Name="WednesdayStart" Grid.Column="1" Margin="30,41,115,45" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=WednesdayButton}" Grid.RowSpan="2"/>
+            <MyUserControl:TimePicker x:Name="ThursdayStart" Grid.Column="1" Margin="30,6,115,13" Grid.Row="8" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=ThursdayButton}"/>
+            <MyUserControl:TimePicker x:Name="FridayStart" Grid.Column="1" Margin="30,34,115,52" Grid.Row="8" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=FridayButton}" Grid.RowSpan="2"/>
+            <MyUserControl:TimePicker x:Name="TuesdayEnd" Grid.Column="1" Margin="126,14,19,7" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=TuesdayButton}" RenderTransformOrigin="0.473,-0.2"/>
+            <MyUserControl:TimePicker x:Name="MondayEnd" Grid.Column="1" Margin="126,52,19,42" Grid.Row="6" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=MondayButton}" RenderTransformOrigin="0.473,-0.2" Grid.RowSpan="2"/>
+            <MyUserControl:TimePicker x:Name="WednesdayEnd" Grid.Column="1" Margin="126,41,19,41" Grid.Row="7" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=WednesdayButton}" RenderTransformOrigin="0.473,-0.2" Grid.RowSpan="2" />
+            <MyUserControl:TimePicker x:Name="ThursdayEnd" Grid.Column="1" Margin="126,6,19,14" Grid.Row="8" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=ThursdayButton}" RenderTransformOrigin="0.473,-0.2"/>
+            <MyUserControl:TimePicker x:Name="FridayEnd" Grid.Column="1" Margin="126,34,19,52" Grid.Row="8" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=FridayButton}" RenderTransformOrigin="0.473,-0.2" Grid.RowSpan="2"/>
+            <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="186,10,0,0" Grid.Row="9" VerticalAlignment="Top" Width="75" Height="25" RenderTransformOrigin="-0.093,0.72" Click="button_Click" Grid.ColumnSpan="2"/>
         </Grid>
 
     </Grid>

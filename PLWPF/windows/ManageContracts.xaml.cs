@@ -1,6 +1,8 @@
 ﻿using PLWPF.ShowAll;
 using PLWPF.delete;
 using System.Windows;
+using PLWPF.Add;
+using PLWPF.edit;
 
 namespace PLWPF.windows
 {
@@ -16,16 +18,16 @@ namespace PLWPF.windows
 
 		private void Add_Contract_Click(object sender, RoutedEventArgs e)
 		{
-			//AddNewContract manage_Contracts = new AddNewContract();
-			//manage_Contracts.Show();
+			AddNewContract manage_Contracts = new AddNewContract();
+			manage_Contracts.Show();
 			Close();
 		}
 
 		private void Edit_Contract_Click(object sender, RoutedEventArgs e)
 		{
-			//EditContract manage_Contracts = new EditContract();
-			//manage_Contracts.Show();
-			Close();
+            EditContract manage_Contracts = new EditContract();
+            manage_Contracts.Show();
+            Close();
 		}
 
 		private void Delete_Contract_Click(object sender, RoutedEventArgs e)

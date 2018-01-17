@@ -1,0 +1,38 @@
+﻿<Window x:Class="PLWPF.edit.EditContract"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF.edit"
+        mc:Ignorable="d"
+        Title="EditControl" Height="510.099" Width="336">
+    <Grid Margin="0,0,0,-47" Height="461" VerticalAlignment="Top">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="89,45,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
+        <Label x:Name="label" Style="{DynamicResource LargeTextStyle}" Content="Choose a contract to edit:" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Width="247" FontSize="20" Height="30"/>
+        <Label x:Name="label_Copy" Style="{DynamicResource SmallTextStyle}" Content="Contract Number:" HorizontalAlignment="Left" Margin="15,85,0,0" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="ContractNumberBox" HorizontalAlignment="Left" Height="23" Margin="162,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1" Style="{DynamicResource SmallTextStyle}" Content="Nanny Id:" HorizontalAlignment="Left" Margin="15,117,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label x:Name="label3" Style="{DynamicResource SmallTextStyle}" Content="Mother Id:" HorizontalAlignment="Left" Margin="15,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.055,0.715"/>
+        <Label x:Name="label4" Style="{DynamicResource SmallTextStyle}" Content="Introduction meeting:" HorizontalAlignment="Left" Margin="15,209,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Style="{DynamicResource SmallTextStyle}" Content="Signed" HorizontalAlignment="Left" Margin="15,241,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Style="{DynamicResource SmallTextStyle}" Content="Is hourly price?" HorizontalAlignment="Left" Margin="15,273,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label8" Style="{DynamicResource SmallTextStyle}" Content="The contract starts in:" HorizontalAlignment="Left" Margin="12,339,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label9" Style="{DynamicResource SmallTextStyle}" Content="The contract ends in:" HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="102,424,0,0" Width="75" Click="button_Click"/>
+        <TextBox x:Name="NannyIdBox" HorizontalAlignment="Left" Height="23" Margin="162,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MotherIdBox" HorizontalAlignment="Left" Height="23" Margin="162,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="meeting" Style="{DynamicResource SmallTextStyle}" Content="Yes" HorizontalAlignment="Left" Margin="162,214,0,0" VerticalAlignment="Top" GroupName="meeting"/>
+        <RadioButton x:Name="meeting2" Style="{DynamicResource SmallTextStyle}" Content="No" HorizontalAlignment="Left" Margin="225,214,0,0" VerticalAlignment="Top" GroupName="meeting"/>
+        <RadioButton x:Name="signed_yes" Style="{DynamicResource SmallTextStyle}" Content="Yes" HorizontalAlignment="Left" Margin="162,246,0,0" VerticalAlignment="Top" GroupName="signed" RenderTransformOrigin="0.183,1.433"/>
+        <RadioButton x:Name="signed_no" Style="{DynamicResource SmallTextStyle}" Content="No" HorizontalAlignment="Left" Margin="225,246,0,0" VerticalAlignment="Top" GroupName="signed"/>
+        <RadioButton x:Name="hourly_yes" Style="{DynamicResource SmallTextStyle}" Content="Yes" HorizontalAlignment="Left" Margin="162,278,0,0" VerticalAlignment="Top" GroupName="hourly" Checked="radioButton_Copy_Checked" RenderTransformOrigin="0.416,1.479"/>
+        <RadioButton x:Name="hourly_no" Style="{DynamicResource SmallTextStyle}" Content="No" HorizontalAlignment="Left" Margin="225,278,0,0" VerticalAlignment="Top" GroupName="hourly" Checked="radioButton2_Checked"/>
+        <TextBox x:Name="priceBox" HorizontalAlignment="Left" Height="23" Margin="162,305,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
+        <DatePicker x:Name="StartDate" HorizontalAlignment="Left" Margin="162,342,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="EndDate" HorizontalAlignment="Left" Margin="162,383,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="pricelabel" Style="{DynamicResource SmallTextStyle}" Content="" HorizontalAlignment="Left" Margin="20,305,0,0" VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.444,0.962" Height="23"/>
+        <Label x:Name="label2" Style="{DynamicResource SmallTextStyle}" Content="Child Id:" HorizontalAlignment="Left" Margin="15,177,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ChildIdBox" HorizontalAlignment="Left" Height="23" Margin="162,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
