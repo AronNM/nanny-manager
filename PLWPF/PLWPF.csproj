@@ -81,6 +81,9 @@
     <Compile Include="delete\DeleteNanny.xaml.cs">
       <DependentUpon>DeleteNanny.xaml</DependentUpon>
     </Compile>
+    <Compile Include="edit\EditNanny.xaml.cs">
+      <DependentUpon>EditNanny.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowAll\ShowAllChildren.xaml.cs">
       <DependentUpon>ShowAllChildren.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="delete\DeleteNanny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="edit\EditNanny.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

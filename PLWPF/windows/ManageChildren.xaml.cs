@@ -1,7 +1,7 @@
 ﻿using PLWPF.ShowAll;
 using PLWPF.delete;
 using System.Windows;
-
+using PLWPF.Add;
 
 namespace PLWPF.windows
 {
@@ -17,8 +17,8 @@ namespace PLWPF.windows
 
 		private void Add_Child_Click(object sender, RoutedEventArgs e)
 		{
-			//AddNewChild manage_Children = new AddNewChild();
-			//manage_Children.Show();
+			AddNewChild addchild = new AddNewChild();
+			addchild.Show();
 			Close();
 		}
 
