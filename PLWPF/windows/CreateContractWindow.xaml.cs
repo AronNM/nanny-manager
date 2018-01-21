@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using BE;
 using BL;
+using System.Threading;
 namespace PLWPF.windows
 {
 	/// <summary>
@@ -45,9 +35,34 @@ namespace PLWPF.windows
 
 		}
 
+		public void setTextInvok(string text)
+		{
+			this.loadingText.Text = text;
+		}
+			
+		private void displayLoading()
+		{
+			string text;
+			for(int i =0; i < 10; i++)
+			{
+				text = "Loading";
+				for (int j = 0; j < 4; j++)
+				{
+					Thread.Sleep(100);
+					text += ".";
+
+					Action<string> d = setTextInvok;
+					Dispatcher.BeginInvoke(d, new object[] { text });
+				}
+			}
+		}
+
 		private void selectedChildRowsButton_Click(object sender, System.EventArgs e)
 		{
-			
+			//Thread loading = new Thread(()=>displayLoading(ref loadingText));
+			Thread loading = new Thread(displayLoading);
+			loading.Start();
+
 			names.Text = bl.get_mother((Child)dataGridNannylessKids.SelectedItem).First_Name + " and " +
 							((Nanny)dataGridRelevantNannies.SelectedItem).First_Name;
 			cons.Text = "NEGATIVES\t" + bl.get_negatives((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
@@ -58,6 +73,7 @@ namespace PLWPF.windows
 							((Nanny)dataGridRelevantNannies.SelectedItem).Address).ToString() + " KM";
 			pros.Text = "POSITIVES\t" + bl.get_positives((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
 							bl.get_mother((Child)dataGridNannylessKids.SelectedItem));
+			//loading.Suspend();
 		}
 
 		private void Create_Contract_Click(object sender, RoutedEventArgs e)
@@ -78,5 +94,7 @@ namespace PLWPF.windows
 				MessageBox.Show("Error: " + ex.Message);
 			}
 		}
+
+		
 	}
 }

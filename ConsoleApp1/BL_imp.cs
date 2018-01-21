@@ -14,6 +14,7 @@ namespace BL
 	public class BL_imp : IBL
 	{
 		Dal_imp d = new Dal_imp();
+        Dal_XML_imp d2 = new Dal_XML_imp();
 		const int group_spliter = 5;    //defines spliting of groups in groupby distance between nanny and mother
 		static int last_contract_number = 11111111;
 
@@ -35,7 +36,8 @@ namespace BL
 			}
 			else
 			{
-				d.add_nanny(n);
+                //d.add_nanny(n);
+                d2.add_nanny(n);
 			}
 		}
 		public void delete_nanny(int id)

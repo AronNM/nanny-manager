@@ -6,7 +6,7 @@
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="Nanny Matcher" Height="600" Width="600" MinWidth="200" MinHeight="200">
+        Title="Nanny Matcher" Height="600" Width="600" MinWidth="200" MinHeight="200" WindowState="Maximized">
     <Window.Effect>
         <DropShadowEffect></DropShadowEffect>
     </Window.Effect>
