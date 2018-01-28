@@ -7,22 +7,34 @@ using BE;
 
 namespace BL
 {
+	/// <summary>
+	/// Factory design method with function to return current BL instance. If no instance exists the function creates new instance
+	/// </summary>
 	public class factoryBL
 	{
 
 		static BL_imp FactoryBl = null;
 
+		/// <summary>
+		/// function which returns current BL instance. If no instance exists creates new instance
+		/// </summary>
+		/// <returns></returns>
 		public static IBL get_bl()
 		{
 			if (FactoryBl == null)
 			{
 				FactoryBl = new BL_imp();
-			    //initialize(FactoryBl);      //function which initializes the instance with demo values
+			 //   initialize(FactoryBl);      //function which initializes the instance with demo values
 
 			}
 			return FactoryBl;
 		}
 
+		/// <summary>
+		/// function which initializes the instance with demo values
+		/// Only used on the first run of the program as after that values are stored in the xml files
+		/// </summary>
+		/// <param name="bl"></param>
 		public static void initialize(BL_imp bl)
 		{
             #region nanny 1 definition

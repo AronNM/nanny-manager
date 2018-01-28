@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+
 using BE;
 using BL;
 using System.Threading;
@@ -35,26 +36,45 @@ namespace PLWPF.windows
 
 		}
 
-		public void setTextInvok(string text)
+		public void setLoadingTextInvok(string text)
 		{
 			this.loadingText.Text = text;
 		}
-			
+
+		public void setDistanceInvok(string text)
+		{
+			this.distance.Text = text;
+		}
+
 		private void displayLoading()
 		{
 			string text;
-			for(int i =0; i < 10; i++)
+			for(int i =0; i < 1000; i++)
 			{
 				text = "Loading";
-				for (int j = 0; j < 4; j++)
+				for (int j = 0; j < 3; j++)
 				{
-					Thread.Sleep(100);
 					text += ".";
 
-					Action<string> d = setTextInvok;
-					Dispatcher.BeginInvoke(d, new object[] { text });
+					string copy = text;
+					Action<string> d1 = setLoadingTextInvok;
+					Dispatcher.Invoke(d1, new object[] { copy });
+
+					Thread.Sleep(100);
 				}
 			}
+
+			Action<string> d = setLoadingTextInvok;
+			Dispatcher.BeginInvoke(d, new object[] { "" });
+		}
+
+		
+		private void displayDistance()
+		{
+			string distance = bl.get_distance(bl.get_mother((Child)dataGridNannylessKids.SelectedItem).Home_Address,
+							((Nanny)dataGridRelevantNannies.SelectedItem).Address).ToString() + " KM";
+			Action<string> d1 = setDistanceInvok;
+			Dispatcher.Invoke(d1, new object[] { distance });
 		}
 
 		private void selectedChildRowsButton_Click(object sender, System.EventArgs e)
@@ -63,18 +83,26 @@ namespace PLWPF.windows
 			Thread loading = new Thread(displayLoading);
 			loading.Start();
 
+			Thread getDistance = new Thread(displayDistance);
+			getDistance.Start();
+
 			names.Text = bl.get_mother((Child)dataGridNannylessKids.SelectedItem).First_Name + " and " +
 							((Nanny)dataGridRelevantNannies.SelectedItem).First_Name;
 			cons.Text = "NEGATIVES\t" + bl.get_negatives((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
 							bl.get_mother((Child)dataGridNannylessKids.SelectedItem));
 			timingIssues.Text = "TIMING ISSUES\t" + bl.get_timing_issues((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
 							bl.get_mother((Child)dataGridNannylessKids.SelectedItem));
-			distance.Text = bl.get_distance(bl.get_mother((Child)dataGridNannylessKids.SelectedItem).Home_Address,
-							((Nanny)dataGridRelevantNannies.SelectedItem).Address).ToString() + " KM";
 			pros.Text = "POSITIVES\t" + bl.get_positives((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
 							bl.get_mother((Child)dataGridNannylessKids.SelectedItem));
-			//loading.Suspend();
+
+			while (getDistance.IsAlive)
+			{
+				//wait and keep loading display alive
+			}
+
+			loading.Abort();
 		}
+
 
 		private void Create_Contract_Click(object sender, RoutedEventArgs e)
 		{

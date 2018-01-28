@@ -52,7 +52,9 @@
         <TextBox x:Name="cons"  Style="{DynamicResource SmallTextStyle}" Margin="40,683,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0" Height="41"/>
         <TextBox x:Name="timingIssues"  Style="{DynamicResource SmallTextStyle}" Margin="40,648,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0" Height="30"/>
 
-        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="Create Contract" Margin="56,551,396,0" VerticalAlignment="Top" Width="140" Height="50" Click="Create_Contract_Click" RenderTransformOrigin="0.485,0.048"/>
+        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="Create Contract" Margin="0,765,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="Create_Contract_Click"/>
+
+        <TextBox x:Name="loadingText"  Style="{DynamicResource LargeTextStyle}" Margin="0,575,0,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="180" BorderThickness="0"/>
 
 
 
