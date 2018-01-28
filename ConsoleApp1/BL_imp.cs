@@ -11,15 +11,19 @@ using System.Threading;
 
 namespace BL
 {
+	/// <summary>
+	///BL_imp implements the functions in IBL which is the logical interface and run all the logic of the program
+	/// </summary>
 	public class BL_imp : IBL
 	{
 		Dal_imp d = new Dal_imp();
         Dal_XML_imp d2 = new Dal_XML_imp();
-		const int group_spliter = 5;    //defines spliting of groups in groupby distance between nanny and mother
+		const int group_spliter = 5;    //defines spliting of groups in group by distance between nanny and mother
 		static int last_contract_number = 11111111;
 
 
 		#region nanny fuctions
+		//comments and explainations for the functions can be found in IBL class
 		public void add_nanny(Nanny n)
 		{
 			// Save today's date.
@@ -56,10 +60,11 @@ namespace BL
         {
             d2.update_nanny(temp,id);
         }
-        #endregion
+		#endregion
 
-        #region mother fuctions
-        public void add_mother(Mother m)
+		#region mother fuctions
+		//comments and explainations for the functions can be found in IBL class
+		public void add_mother(Mother m)
 		{
 			d2.add_mother(m);
 		}
@@ -80,10 +85,11 @@ namespace BL
             d2.update_mother(temp,id);
         }
 
-        #endregion
+		#endregion
 
-        #region child fuctions
-        public void add_child(Child c)
+		#region child fuctions
+		//comments and explainations for the functions can be found in IBL class
+		public void add_child(Child c)
 		{
 			d2.add_child(c);
 		}
@@ -106,6 +112,11 @@ namespace BL
 		#endregion
 
 		#region contract fuctions
+		//comments and explainations for the functions can be found in IBL class
+		/// <summary>
+		/// returns next available contract number
+		/// </summary>
+		/// <returns></returns>
 		public int getNewContractNum()
 		{
 			if (last_contract_number == 11111111)
@@ -230,10 +241,11 @@ namespace BL
         {
             d2.update_contract(c,id);
         }
-        #endregion
+		#endregion
 
-        #region list fuctions
-        public List<Nanny> get_nanny_list()
+		#region list fuctions
+		//comments and explainations for the functions can be found in IBL class
+		public List<Nanny> get_nanny_list()
 		{
 			return d2.get_nanny_list();
 		}
@@ -336,11 +348,12 @@ namespace BL
 			}
 			return nanny_list;
 		}
-	
-	#endregion
 
-	#region helper fuctions
-	public Double get_distance(string address1, string address2)
+		#endregion
+
+		#region helper fuctions
+		//comments and explainations for the functions can be found in IBL class
+		public Double get_distance(string address1, string address2)
 		{
 			double dist = 0;
 			Thread thread = new Thread(() => threaded_get_distance(address1, address2, ref dist));
@@ -514,6 +527,7 @@ namespace BL
 		#endregion
 
 		#region custom fuctions
+		//comments and explainations for the functions can be found in IBL class
 		public List<Child> get_all_nannyless_kids()
 		{
 			List<Child> nannyless_kids = new List<Child>();
