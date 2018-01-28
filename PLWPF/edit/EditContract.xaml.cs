@@ -22,7 +22,7 @@ namespace PLWPF.edit
     public partial class EditContract : Window
     {
         IBL bl;
-        Contract c;
+        Contract c = new Contract();
         public EditContract()
         {
             bl = factoryBL.get_bl();
@@ -46,7 +46,7 @@ namespace PLWPF.edit
             StartDate.BorderBrush = Brushes.Black;
             EndDate.BorderBrush = Brushes.Black;
             #endregion
-
+            //Contract c = new Contract();
             //we create a new object based on the selected Id from the combo box, so we fill all the window controls
             // with this object properties
             c = (Contract)comboBox.SelectedItem;
@@ -95,6 +95,7 @@ namespace PLWPF.edit
             StartDate.BorderBrush = Brushes.Black;
             EndDate.BorderBrush = Brushes.Black;
             #endregion
+            //Contract c = new Contract();
             Contract temp = new Contract();
             int num;
             try
@@ -105,7 +106,7 @@ namespace PLWPF.edit
                     throw new Exception("You must enter a digit in the contract number box.");
 
                 }
-                c.Number = int.Parse(this.ContractNumberBox.Text);
+                temp.Number = int.Parse(this.ContractNumberBox.Text);
 
                 if (!int.TryParse(NannyIdBox.Text, out num))
                 {
@@ -113,7 +114,7 @@ namespace PLWPF.edit
                     throw new Exception("You must enter a digit in the Nanny Id box.");
 
                 }
-                c.Nanny_Id = int.Parse(this.NannyIdBox.Text);
+                temp.Nanny_Id = int.Parse(this.NannyIdBox.Text);
 
                 if (!int.TryParse(MotherIdBox.Text, out num))
                 {
@@ -121,7 +122,7 @@ namespace PLWPF.edit
                     throw new Exception("You must enter a digit in the Mother Id box.");
 
                 }
-                c.Mother_Id = int.Parse(this.MotherIdBox.Text);
+                temp.Mother_Id = int.Parse(this.MotherIdBox.Text);
 
                 if (!int.TryParse(ChildIdBox.Text, out num))
                 {
@@ -129,7 +130,7 @@ namespace PLWPF.edit
                     throw new Exception("You must enter a digit in the Child Id box.");
 
                 }
-                c.Child_Id = int.Parse(this.ChildIdBox.Text);
+                temp.Child_Id = int.Parse(this.ChildIdBox.Text);
 
                 if (!int.TryParse(priceBox.Text, out num))
                 {
@@ -139,16 +140,16 @@ namespace PLWPF.edit
                 }
                 if (this.hourly_yes.IsChecked == true)
                 {
-                    c.Price_Is_Hourly = true;
-                    c.Hourly_Price = double.Parse(priceBox.Text);
+                    temp.Price_Is_Hourly = true;
+                    temp.Hourly_Price = double.Parse(priceBox.Text);
                 }
                 if (this.hourly_no.IsChecked == true)
                 {
-                    c.Price_Is_Hourly = false;
-                    c.Monthly_Price = double.Parse(this.priceBox.Text);
+                    temp.Price_Is_Hourly = false;
+                   temp.Monthly_Price = double.Parse(this.priceBox.Text);
                 }
-                c.Starts = Convert.ToDateTime(this.StartDate.Text);
-                c.Ends = Convert.ToDateTime(this.EndDate.Text);
+                temp.Starts = Convert.ToDateTime(this.StartDate.Text);
+               temp.Ends = Convert.ToDateTime(this.EndDate.Text);
             }
             catch (Exception ex)
             {
