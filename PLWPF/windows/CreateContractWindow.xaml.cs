@@ -35,72 +35,77 @@ namespace PLWPF.windows
 			pros.Text = "";
 
 		}
-
-		public void setLoadingTextInvok(string text)
-		{
-			this.loadingText.Text = text;
-		}
-
-		public void setDistanceInvok(string text)
-		{
-			this.distance.Text = text;
-		}
-
-		private void displayLoading()
-		{
-			string text;
-			for(int i =0; i < 1000; i++)
-			{
-				text = "Loading";
-				for (int j = 0; j < 3; j++)
-				{
-					text += ".";
-
-					string copy = text;
-					Action<string> d1 = setLoadingTextInvok;
-					Dispatcher.Invoke(d1, new object[] { copy });
-
-					Thread.Sleep(100);
-				}
-			}
-
-			Action<string> d = setLoadingTextInvok;
-			Dispatcher.BeginInvoke(d, new object[] { "" });
-		}
-
 		
-		private void displayDistance()
+
+		public void setDistanceInvoke(string text)
 		{
-			string distance = bl.get_distance(bl.get_mother((Child)dataGridNannylessKids.SelectedItem).Home_Address,
-							((Nanny)dataGridRelevantNannies.SelectedItem).Address).ToString() + " KM";
-			Action<string> d1 = setDistanceInvok;
-			Dispatcher.Invoke(d1, new object[] { distance });
+			this.distance.Text = text + " KM";
 		}
+
+		private void dist(ref Mother mother, ref Nanny nanny)
+		{
+			Action<string> d = setDistanceInvoke;
+			try
+			{
+				Dispatcher.BeginInvoke(d, new object[] { "LOADING" });
+
+				IBL bl_thread = factoryBL.get_bl();
+				string text = bl_thread.get_distance(mother.Home_Address, nanny.Address).ToString();
+
+				Dispatcher.BeginInvoke(d, new object[] { text });
+			}
+			catch(Exception ex) {
+				Dispatcher.BeginInvoke(d, new object[] { "Error while calculating distance!" });
+			}
+		}
+
+
+
+		//public void setLoadingTextInvok(string text)
+		//{
+		//	this.loadingText.Text = text;
+		//}
+
+		//private void displayLoading()
+		//{
+		//	string text;
+		//	for (int i = 0; i < 3; i++)
+		//	{
+		//		text = "Loading";
+		//		for (int j = 0; j < 3; j++)
+		//		{
+		//			text += ".";
+
+		//			string copy = text;
+		//			Action<string> d1 = setLoadingTextInvok;
+		//			Dispatcher.BeginInvoke(d1, new object[] { copy });
+
+		//			Thread.Sleep(300);
+		//		}
+		//	}
+
+		//	Action<string> d = setLoadingTextInvok;
+		//	Dispatcher.BeginInvoke(d, new object[] { "" });
+		//}
+
 
 		private void selectedChildRowsButton_Click(object sender, System.EventArgs e)
 		{
-			//Thread loading = new Thread(()=>displayLoading(ref loadingText));
-			Thread loading = new Thread(displayLoading);
-			loading.Start();
+			//	Thread loading = new Thread(displayLoading);
+			//	loading.Start();
 
-			Thread getDistance = new Thread(displayDistance);
-			getDistance.Start();
+			var child = (Child)dataGridNannylessKids.SelectedItem;
+			var mother = bl.get_mother((Child)dataGridNannylessKids.SelectedItem);
+			var nanny = (Nanny)dataGridRelevantNannies.SelectedItem;
+			
+			Thread setDistance = new Thread(() => dist(ref mother, ref nanny));
+			setDistance.Start();
 
-			names.Text = bl.get_mother((Child)dataGridNannylessKids.SelectedItem).First_Name + " and " +
-							((Nanny)dataGridRelevantNannies.SelectedItem).First_Name;
-			cons.Text = "NEGATIVES\t" + bl.get_negatives((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
-							bl.get_mother((Child)dataGridNannylessKids.SelectedItem));
-			timingIssues.Text = "TIMING ISSUES\t" + bl.get_timing_issues((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
-							bl.get_mother((Child)dataGridNannylessKids.SelectedItem));
-			pros.Text = "POSITIVES\t" + bl.get_positives((Nanny)dataGridRelevantNannies.SelectedItem, (Child)dataGridNannylessKids.SelectedItem,
-							bl.get_mother((Child)dataGridNannylessKids.SelectedItem));
-
-			while (getDistance.IsAlive)
-			{
-				//wait and keep loading display alive
-			}
-
-			loading.Abort();
+			names.Text = mother.First_Name + " and " + nanny.First_Name;
+			cons.Text = "NEGATIVES\t" + bl.get_negatives(nanny, child, mother);
+			timingIssues.Text = "TIMING ISSUES\t" + bl.get_timing_issues(nanny, child, mother);
+			pros.Text = "POSITIVES\t" + bl.get_positives(nanny, child, mother);
+			//distance.Text = bl.get_distance(mother.Home_Address, nanny.Address).ToString() + " KM";
 		}
 
 
@@ -119,7 +124,7 @@ namespace PLWPF.windows
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Error: " + ex.Message);
+				MessageBox.Show("Error: You must select a child and a nanny!");
 			}
 		}
 

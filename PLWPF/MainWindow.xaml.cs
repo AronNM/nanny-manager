@@ -20,7 +20,7 @@ namespace PLWPF
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
-	/// </summary>
+	/// </summary>Message
 	public partial class MainWindow : Window
 	{
 
@@ -31,32 +31,67 @@ namespace PLWPF
 
 		private void Manage_Nannies_Click(object sender, RoutedEventArgs e)
 		{
-			ManageNannies manage_nannies = new ManageNannies();
-			manage_nannies.ShowDialog();
+			try
+			{
+				ManageNannies manage_nannies = new ManageNannies();
+				manage_nannies.ShowDialog();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message);
+			}
 		}
 
 		private void Manage_Mothers_Click(object sender, RoutedEventArgs e)
 		{
-			ManageMothers manage_mothers = new ManageMothers();
+			try
+			{
+				ManageMothers manage_mothers = new ManageMothers();
 			manage_mothers.ShowDialog();
-		}
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message);
+			}
+}
 
 		private void Manage_Contracts_Click(object sender, RoutedEventArgs e)
 		{
-			ManageContracts manage_contracts = new ManageContracts();
+			try
+			{
+				ManageContracts manage_contracts = new ManageContracts();
 			manage_contracts.ShowDialog();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message);
+			}
 		}
 
 		private void Manage_Children_Click(object sender, RoutedEventArgs e)
 		{
-			ManageChildren manage_children = new ManageChildren();
+			try
+			{
+				ManageChildren manage_children = new ManageChildren();
 			manage_children.ShowDialog();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message);
+			}
 		}
 
 		private void Contract_Wizard_Click(object sender, RoutedEventArgs e)
 		{
-			CreateContractWindow wizard = new CreateContractWindow();
+			try
+			{
+				CreateContractWindow wizard = new CreateContractWindow();
 			wizard.ShowDialog();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message);
+			}
 		}
 
 	}

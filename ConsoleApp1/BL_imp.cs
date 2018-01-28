@@ -103,10 +103,22 @@ namespace BL
         {
             d2.update_child(temp,id);
         }
-        #endregion
+		#endregion
 
-        #region contract fuctions
-        public void add_contract(Contract c)
+		#region contract fuctions
+		public int getNewContractNum()
+		{
+			if (last_contract_number == 11111111)
+			{
+				foreach (var contract in get_contract_list())
+				{
+					last_contract_number = Math.Max(contract.Number, last_contract_number);
+				}
+			}
+			return ++last_contract_number;
+		}
+
+		public void add_contract(Contract c)
 		{
 			foreach (var child in d2.get_child_list())   // find instance of the relevent child
 			{
@@ -190,7 +202,7 @@ namespace BL
 									}
 									#endregion
 
-									c.Number = last_contract_number++;
+									c.Number = getNewContractNum();
 									d2.add_contract(c);
 
 									return;
@@ -342,12 +354,19 @@ namespace BL
 
 		public static void threaded_get_distance(string address1, string address2, ref double dist)
 		{
-			var drivingDirectionRequest = new DirectionsRequest { TravelMode = TravelMode.Driving, Origin = address1, Destination = address2, };
+			try
+			{
+				var drivingDirectionRequest = new DirectionsRequest { TravelMode = TravelMode.Driving, Origin = address1, Destination = address2, };
 
-			DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
-			Route route = drivingDirections.Routes.First(); Leg leg = route.Legs.First();
+				DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
+				Route route = drivingDirections.Routes.First(); Leg leg = route.Legs.First();
 
-			dist = (int)(leg.Distance.Value) / 1000;
+				dist = (int)(leg.Distance.Value) / 1000;
+			}
+			catch
+			{
+				dist = 0;
+			}
 		}
 
 		public List<Nanny> check_initial_match(Mother mother)
