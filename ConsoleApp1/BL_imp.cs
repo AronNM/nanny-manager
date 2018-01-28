@@ -498,11 +498,11 @@ namespace BL
 
 		public IEnumerable<Contract> get_contracts_by_condition(Func<Contract, bool> predicate = null)
 		{
-			return d.get_contract_list().Where(x => predicate(x));
+			return get_contract_list().Where(x => predicate(x));
 		}
 		public int get_amount_of_contracts_by_condition(Func<Contract, bool> predicate = null)
 		{
-			return d.get_contract_list().Where(x => predicate(x)).Count();
+			return d2.get_contract_list().Where(x => predicate(x)).Count();
 		}
 		public IEnumerable<IGrouping<int, Nanny>> get_nannies_by_child_age(bool max, bool sorted = false)
 		{

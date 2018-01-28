@@ -58,22 +58,32 @@ namespace PLWPF.ShowAll
 
 		private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
+			if (comboBox.SelectedItem == null)
+			{
+				dataGrid.ItemsSource = bl.get_contract_list();
+				return;
+			}
+
 			condition = (ContractCondition)comboBox.SelectedItem;
 			if (condition == ContractCondition.Contract_Signed)
 			{
-				dataGrid.ItemsSource = bl.get_contracts_by_condition((Contract c)=>(c.Signed));
+				dataGrid.ItemsSource = bl.get_contracts_by_condition((Contract c)=>((bool)c.Signed));
+				return;
 			}
 			if (condition == ContractCondition.Price_is_Hourly)
 			{
 				dataGrid.ItemsSource = bl.get_contracts_by_condition((Contract c) => (c.Price_Is_Hourly));
+				return;
 			}
 			if (condition == ContractCondition.Price_is_Monthly)
 			{
 				dataGrid.ItemsSource = bl.get_contracts_by_condition((Contract c) => (!c.Price_Is_Hourly));
+				return;
 			}
 			if (condition == ContractCondition.Introduction_Meeting_Happened)
 			{
 				dataGrid.ItemsSource = bl.get_contracts_by_condition((Contract c) => (c.Introduction_meeting));
+				return;
 			}
 		}
 	}
