@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="DeleteNanny" Height="440" Width="400">
     <Grid>
-        <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}" Margin="0,100,0,0" SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}"  VerticalAlignment="Top" Width="140" Height="22"/>
+        <ComboBox x:Name="comboBox" Style="{DynamicResource SmallTextStyle}" Margin="37,89,215,0" SelectionChanged="comboBox_SelectionChanged" Text="{Binding Id}"  VerticalAlignment="Top" Width="140" Height="22"/>
         <Label x:Name="label" Style="{DynamicResource LargeTextStyle}" Content="Select the Nanny Id you'd like to delete:" Margin="0,50,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="remove" Margin="0,330,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="Remove_Nanny_Click"/>
+        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="remove" Margin="215,81,37,0" VerticalAlignment="Top" Width="140" Height="50" Click="Remove_Nanny_Click"/>
         <Label x:Name="label1" Style="{DynamicResource SmallTextStyle}" Content=""  Margin="0,150,0,0" VerticalAlignment="Top" Height="auto" Width="auto"/>
     </Grid>
 </Window>

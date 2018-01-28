@@ -114,6 +114,9 @@
     <Compile Include="windows\CreateContractWindow.xaml.cs">
       <DependentUpon>CreateContractWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="windows\ExceptionWindow.xaml.cs">
+      <DependentUpon>ExceptionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\ManageContracts.xaml.cs">
       <DependentUpon>ManageContracts.xaml</DependentUpon>
     </Compile>
@@ -207,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\CreateContractWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\ExceptionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

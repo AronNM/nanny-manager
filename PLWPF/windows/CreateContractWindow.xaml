@@ -8,8 +8,8 @@
         Title="CreateContractWindow" Height="900" Width="600">
     <Grid>
         <Label x:Name="label" Content="Create Contract Wizard" Style="{DynamicResource LargeTextStyle}" Margin="0,25,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="chooseChild" Content="Please select one of the nannyless children listed below:" Style="{DynamicResource SmallTextStyle}" Margin="40,70,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <DataGrid x:Name="dataGridNannylessKids" IsReadOnly="True" Margin="10,100,10,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" MouseDoubleClick="selectedNanniesRowsButton_Click" >
+        <Label x:Name="chooseChild" Content="Please select one of the nannyless children listed below:" Style="{DynamicResource SmallTextStyle}" Margin="40,59,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <DataGrid x:Name="dataGridNannylessKids" IsReadOnly="True" Margin="66,86,66,0" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" MouseDoubleClick="selectedNanniesRowsButton_Click" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"
                           Binding="{Binding Id}"/>
@@ -23,9 +23,9 @@
                           Binding="{Binding Special_Needs}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="chooseNanny1" Content="Bellow is a list of the most suitable nannies for the selected child." Style="{DynamicResource SmallTextStyle}" Margin="40,320,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label x:Name="chooseNanny2" Content="Please select a nanny from the list:" Style="{DynamicResource SmallTextStyle}" Margin="40,343,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <DataGrid x:Name="dataGridRelevantNannies" IsReadOnly="True" Margin="10,370,10,20" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" MouseDoubleClick="selectedChildRowsButton_Click" >
+        <Label x:Name="chooseNanny1" Content="Bellow is a list of the most suitable nannies for the selected child." Style="{DynamicResource SmallTextStyle}" Margin="40,287,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="chooseNanny2" Content="Please select a nanny from the list:" Style="{DynamicResource SmallTextStyle}" Margin="40,314,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <DataGrid x:Name="dataGridRelevantNannies" IsReadOnly="True" Margin="66,341,66,0" VerticalAlignment="Top" Height="196" Width="460" AutoGenerateColumns="False" MouseDoubleClick="selectedChildRowsButton_Click" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"
                           Binding="{Binding Id}"/>
@@ -42,18 +42,18 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Label x:Name="distanceLabel" Content="Distance to nanny:" Style="{DynamicResource SmallTextStyle}" Margin="-140,600,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="distance"  Style="{DynamicResource SmallTextStyle}" Margin="140,605,0,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="120" BorderThickness="0" FontWeight="bold"/>
+        <Label x:Name="distanceLabel" Content="Distance to nanny:" Style="{DynamicResource SmallTextStyle}" Margin="203,551,255,0" VerticalAlignment="Top" Width="134"/>
+        <TextBox x:Name="distance"  Style="{DynamicResource SmallTextStyle}" Margin="356,551,116,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="120" BorderThickness="0" FontWeight="bold"/>
 
-        <Label x:Name="namesLabel" Content="Contract Between:" Style="{DynamicResource SmallTextStyle}" Margin="-140,630,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="names"  Style="{DynamicResource SmallTextStyle}" Margin="270,635,0,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="260" BorderThickness="0" FontWeight="bold"/>
+        <Label x:Name="namesLabel" Content="Contract Between:" Style="{DynamicResource SmallTextStyle}" Margin="203,578,255,0" VerticalAlignment="Top" Width="134"/>
+        <TextBox x:Name="names"  Style="{DynamicResource SmallTextStyle}" Margin="356,578,37,0" VerticalAlignment="Top" TextWrapping="NoWrap" Width="199" BorderThickness="0" FontWeight="bold"/>
 
-        <TextBox x:Name="pros"  Style="{DynamicResource SmallTextStyle}" Margin="40,665,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0"/>
-        <TextBox x:Name="cons"  Style="{DynamicResource SmallTextStyle}" Margin="40,695,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0"/>
-        <TextBox x:Name="timingIssues"  Style="{DynamicResource SmallTextStyle}" Margin="40,725,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0"/>
+        <TextBox x:Name="pros"  Style="{DynamicResource SmallTextStyle}" Margin="40,610,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0" Height="33"/>
+        <TextBox x:Name="cons"  Style="{DynamicResource SmallTextStyle}" Margin="40,683,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0" Height="41"/>
+        <TextBox x:Name="timingIssues"  Style="{DynamicResource SmallTextStyle}" Margin="40,648,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="NoWrap" Width="520" BorderThickness="0" Height="30"/>
 
-        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="Create Contract" Margin="0,765,0,0" VerticalAlignment="Top" Width="140" Height="50" Click="Create_Contract_Click"/>
-        
+        <Button x:Name="button" Style="{DynamicResource SmallButtonStyle}" Content="Create Contract" Margin="56,551,396,0" VerticalAlignment="Top" Width="140" Height="50" Click="Create_Contract_Click" RenderTransformOrigin="0.485,0.048"/>
+
 
 
 

@@ -13,7 +13,7 @@
             <ColumnDefinition Width="55*"/>
             <ColumnDefinition Width="18*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="10,10,10,189" Grid.ColumnSpan="2">
+        <Grid Margin="10,0,10,199" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
@@ -36,17 +36,14 @@
             <Label x:Name="Label2" Style="{DynamicResource SmallTextStyle}" Content="First Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Margin="80,15,68,19" Height="24" Width="88"/>
             <Label x:Name="Label3" Style="{DynamicResource SmallTextStyle}" Content="Last Name" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center"/>
             <Label x:Name="Label4" Style="{DynamicResource SmallTextStyle}" Content="Home Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center"/>
-            <Label x:Name="Label5" Style="{DynamicResource SmallTextStyle}" Content="Second Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center"/>
+            <Label x:Name="Label5" Style="{DynamicResource SmallTextStyle}" Content="Second Address" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Margin="68,0,60,39"/>
             <Label x:Name="Label6" Style="{DynamicResource SmallTextStyle}" Content="Max travel distance" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center"/>
             <Label x:Name="Label7" Style="{DynamicResource SmallTextStyle}" Content="Which days the mother needs nanny? " FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="6" VerticalAlignment="Center" Margin="186,0,10,37" Width="276" Height="30" Grid.ColumnSpan="2"/>
             <Label x:Name="Label8" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Center"/>
             <Label x:Name="Label9" Content="" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="8" VerticalAlignment="Center"/>
-            <TextBox x:Name="IdBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " />
-            <TextBox x:Name="FIrstNameBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " />
-            <TextBox x:Name="LastNameBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                         " Margin="80,16,80,15" Width="76" />
-            <TextBox x:Name="AddressBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="80,15,80,16" Width="76" />
-            <TextBox x:Name="SecondAddressBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="80,16" Width="76" />
-            <TextBox x:Name="MaxTravelDistanceBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="80,16,80,15" Width="76" />
+            <TextBox x:Name="IdBox" BorderBrush="Black" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " Margin="70,24,90,22" />
+            <TextBox x:Name="FIrstNameBox" BorderBrush="Black" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " Margin="70,23,90,23" />
+
             <CheckBox x:Name="SundayButton" Style="{DynamicResource SmallTextStyle}" Content="Sunday" HorizontalAlignment="Left" Height="19" Margin="186,38,0,0" Grid.Row="6" VerticalAlignment="Top" Width="88" RenderTransformOrigin="2.093,0.735" Grid.ColumnSpan="2" />
             <CheckBox x:Name="MondayButton" Style="{DynamicResource SmallTextStyle}" Content="Monday" HorizontalAlignment="Left" Margin="186,64,0,0" Grid.Row="6" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.527,1.18" Grid.ColumnSpan="2" Grid.RowSpan="2" />
             <CheckBox x:Name="TuesdayButton" Style="{DynamicResource SmallTextStyle}" Content="Tuesday" HorizontalAlignment="Left" Height="19" Margin="186,26,0,0" Grid.Row="7" VerticalAlignment="Top" Width="67" Grid.ColumnSpan="2" />
@@ -66,6 +63,12 @@
             <MyUserControl:TimePicker x:Name="ThursdayEnd" Grid.Column="1" Margin="126,6,19,14" Grid.Row="8" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=ThursdayButton}" RenderTransformOrigin="0.473,-0.2"/>
             <MyUserControl:TimePicker x:Name="FridayEnd" Grid.Column="1" Margin="126,34,19,52" Grid.Row="8" Height="Auto" Width="Auto" IsEnabled="{Binding IsChecked, ElementName=FridayButton}" RenderTransformOrigin="0.473,-0.2" Grid.RowSpan="2"/>
             <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="186,10,0,0" Grid.Row="9" VerticalAlignment="Top" Width="75" Height="25" RenderTransformOrigin="-0.093,0.72" Click="button_Click" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="MaxTravelDistanceBox" BorderBrush="Black" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " Margin="70,21,90,26" />
+            <TextBox x:Name="SecondAddressBox" BorderBrush="Black" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " Margin="70,3,90,42" />
+            <TextBox x:Name="AddressBox" BorderBrush="Black" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " Margin="70,27,90,20" />
+            <TextBox x:Name="LastNameBox" BorderBrush="Black" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " Margin="70,27,90,20" />
+            <Label x:Name="Telephone" Style="{DynamicResource SmallTextStyle}" Content="Telephone Number" HorizontalAlignment="Left" Margin="54,39,0,0" Grid.Row="4" VerticalAlignment="Top"/>
+            <TextBox x:Name="TelephoneBox" BorderBrush="Black" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="                    " Margin="70,43,90,3" />
         </Grid>
 
     </Grid>

@@ -40,32 +40,32 @@ namespace BL
                 d2.add_nanny(n);
 			}
 		}
-		public void delete_nanny(int id)
+		public void delete_nanny(Nanny n)
 		{
-			d.delete_nanny(id);
+			d2.delete_nanny(n);
 		}
-		public void update_nanny(int i, int s, string s2)
-		{
-			d.update_nanny(i,s,s2);
-		}
-        public void update_nanny(int i, int s, bool[] s2, TimeSpan[,] t)
+		//public void update_nanny(int i, int s, string s2)
+		//{
+		//	d2.update_nanny(i,s,s2);
+		//}
+  //      public void update_nanny(int i, int s, bool[] s2, TimeSpan[,] t)
+  //      {
+  //          d.update_nanny(i, s, s2,t);
+  //      }
+        public void update_nanny(Nanny temp,int id)
         {
-            d.update_nanny(i, s, s2,t);
-        }
-        public void update_nanny(int id, Nanny temp)
-        {
-            d.update_nanny(id, temp);
+            d2.update_nanny(temp,id);
         }
         #endregion
 
         #region mother fuctions
         public void add_mother(Mother m)
 		{
-			d.add_mother(m);
+			d2.add_mother(m);
 		}
-		public void delete_mother(int id)
+		public void delete_mother(Mother m)
 		{
-			d.delete_mother(id);
+			d2.delete_mother(m);
 		}
 		public void update_mother(int id, int attribute, string s)
 		{
@@ -75,9 +75,9 @@ namespace BL
         {
             d.update_mother(id,attribute,b,t);
         }
-        public void update_mother(int id, Mother temp)
+        public void update_mother(Mother temp,int id)
         {
-            d.update_mother(id,temp);
+            d2.update_mother(temp,id);
         }
 
         #endregion
@@ -85,11 +85,11 @@ namespace BL
         #region child fuctions
         public void add_child(Child c)
 		{
-			d.add_child(c);
+			d2.add_child(c);
 		}
-		public void delete_child(int id)
+		public void delete_child(Child c)
 		{
-			d.delete_child(id);
+			d2.delete_child(c);
 		}
 		public void update_child(int id, int attribute, string s)
 		{
@@ -99,24 +99,24 @@ namespace BL
         {
             d.update_child(id, attribute, s, s2);
         }
-        public void update_child(int id, Child temp)
+        public void update_child(Child temp,int id)
         {
-            d.update_child(id, temp);
+            d2.update_child(temp,id);
         }
         #endregion
 
         #region contract fuctions
         public void add_contract(Contract c)
 		{
-			foreach (var child in d.get_child_list())   // find instance of the relevent child
+			foreach (var child in d2.get_child_list())   // find instance of the relevent child
 			{
 				if (c.Child_Id == child.Id)
 				{
-					foreach (var nanny in d.get_nanny_list())   // find instance of the relevent nanny
+					foreach (var nanny in d2.get_nanny_list())   // find instance of the relevent nanny
 					{
 						if (c.Nanny_Id == nanny.Id)
 						{
-							foreach (var mother in d.get_mother_list()) // find instance of the relevent mother
+							foreach (var mother in d2.get_mother_list()) // find instance of the relevent mother
 							{
 								if (child.Mother_Id == mother.Id)
 								{
@@ -191,7 +191,7 @@ namespace BL
 									#endregion
 
 									c.Number = last_contract_number++;
-									d.add_contract(c);
+									d2.add_contract(c);
 
 									return;
 								}
@@ -203,39 +203,39 @@ namespace BL
 		}
         public void add_contract_manually(Contract c)
         {
-            d.add_contract(c);
+            d2.add_contract(c);
         }
 
-        public void delete_contract(int num)
+        public void delete_contract(Contract c)
 		{
-			d.delete_contract(num);
+			d2.delete_contract(c);
 		}
 		public void update_contract(int number, int attribute, string content)
 		{
 			d.update_contract(number,attribute,content);
 		}
-        public void update_contract(int number, Contract c)
+        public void update_contract(Contract c,int id)
         {
-            d.update_contract(number,c);
+            d2.update_contract(c,id);
         }
         #endregion
 
         #region list fuctions
         public List<Nanny> get_nanny_list()
 		{
-			return d.get_nanny_list();
+			return d2.get_nanny_list();
 		}
 		public List<Mother> get_mother_list()
 		{
-			return d.get_mother_list();
+			return d2.get_mother_list();
 		}
 		public List<Child> get_child_list()
 		{
-			return d.get_child_list();
+			return d2.get_child_list();
 		}
 		public List<Contract> get_contract_list()
 		{
-			return d.get_contract_list();
+			return d2.get_contract_list();
 		}
 		public List<SortMotherBy> get_sort_mothers_by_list()
 		{
@@ -248,7 +248,7 @@ namespace BL
 		}
 		public List<Mother> get_mother_list(SortMotherBy sortBy)
 		{
-			List<Mother> mother_list= d.get_mother_list(); 
+			List<Mother> mother_list= d2.get_mother_list(); 
 			if (sortBy == SortMotherBy.Id)
 			{
 				mother_list.Sort((mother1, mother2) => (mother1.Id.CompareTo(mother2.Id)));
@@ -289,7 +289,7 @@ namespace BL
 
 		public List<Nanny> get_nanny_list(SortNannyBy sortBy)
 		{
-			List<Nanny> nanny_list = d.get_nanny_list();
+			List<Nanny> nanny_list = d2.get_nanny_list();
 			if (sortBy == SortNannyBy.Id)
 			{
 				nanny_list.Sort((mother1, mother2) => (mother1.Id.CompareTo(mother2.Id)));
@@ -366,7 +366,7 @@ namespace BL
 					}
 					if (mother.Needs_On_Day[i] && nanny.Works_On_Day[i])
 					{
-						if (mother.Needs_Hours[0, i] < nanny.Work_Hours[0, i] || mother.Needs_Hours[1, i] > nanny.Work_Hours[1, i])
+						if (mother.Needs_Hours[i,0] < nanny.Work_Hours[i,0] || mother.Needs_Hours[i,1] > nanny.Work_Hours[i,1])
 						{
 							match = false;
 						}
@@ -657,7 +657,7 @@ namespace BL
 			{
 				if (mother.Needs_On_Day[i] && nanny.Works_On_Day[i])
 				{
-					if (mother.Needs_Hours[0, i] < nanny.Work_Hours[0, i])
+					if (mother.Needs_Hours[i,0] < nanny.Work_Hours [i,0])
 					{
 						if (first)
 						{
@@ -678,7 +678,7 @@ namespace BL
 			{
 				if (mother.Needs_On_Day[i] && nanny.Works_On_Day[i])
 				{
-					if (mother.Needs_Hours[1, i] > nanny.Work_Hours[1, i])
+					if (mother.Needs_Hours[i,1] > nanny.Work_Hours[i,1])
 					{
 						if (first)
 						{

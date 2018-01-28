@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PLWPF.windows;
 
 namespace PLWPF.Add
 {
@@ -36,11 +37,49 @@ namespace PLWPF.Add
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            IdBox.BorderBrush = Brushes.Black;
+            MotherIdBox.BorderBrush = Brushes.Black;
+            BirthDatePicker.BorderBrush = Brushes.Black;
+            
+
             Child temp = new Child();
-            temp.Id = int.Parse(IdBox.Text);
-            temp.Mother_Id = int.Parse(MotherIdBox.Text);
+            int num;
+            try
+            {
+                if (!int.TryParse(IdBox.Text, out num))
+                {
+                    IdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Id box.");
+
+                }
+                temp.Id = int.Parse(IdBox.Text);
+
+                if (!int.TryParse(MotherIdBox.Text, out num))
+                {
+                    MotherIdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Mother Id box.");
+
+                }
+                temp.Mother_Id = int.Parse(MotherIdBox.Text);
+                temp.Birth_Date = Convert.ToDateTime(BirthDatePicker.Text);
+
+            }
+            catch (Exception ex)
+            {
+                
+                if (ex.Message == "String was not recognized as a valid DateTime.")
+                {
+                    BirthDatePicker.BorderBrush = Brushes.Red;
+                    MessageBox.Show("You must choose a date in the calender");
+                    return;
+                }
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            //temp.Id = int.Parse(IdBox.Text);
+           
             temp.First_Name = FirstNameBox.Text;
-            temp.Birth_Date = Convert.ToDateTime(BirthDatePicker.Text);
+            
             if (SpecialNeedscheckBox.IsChecked == true)
             {
                 temp.Special_Needs = true;
@@ -50,8 +89,17 @@ namespace PLWPF.Add
             {
                 temp.Special_Needs = false;
             }
-            bl.add_child(temp);
-            Close();
+            try
+            {
+                bl.add_child(temp);
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

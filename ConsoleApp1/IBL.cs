@@ -11,25 +11,25 @@ namespace BL
 	{
 		#region nanny fuctions
 		void add_nanny(Nanny n);
-		void delete_nanny(int id);
-		void update_nanny(int i, int s, string s2);
-        void update_nanny(int i, int s, bool[] b, TimeSpan[,] t);
-        void update_nanny(int id, Nanny temp);
+		void delete_nanny(Nanny n);
+		//void update_nanny(int i, int s, string s2);
+       // void update_nanny(int i, int s, bool[] b, TimeSpan[,] t);
+        void update_nanny(Nanny temp,int id);
         #endregion
 
         #region mother fuctions
         void add_mother(Mother m);
-		void delete_mother(int id);
+		void delete_mother(Mother m);
 		void update_mother(int id, int atributte, string s);
         void update_mother(int id, int atributte, bool[] b,TimeSpan[,] t);
-        void update_mother(int id, Mother temp);
+        void update_mother(Mother temp,int id);
         #endregion
 
         #region child fuctions
         void add_child(Child c);
-		void delete_child(int id);
+		void delete_child(Child c);
 		void update_child(int id, int atributte, string s);
-        void update_child(int id, Child temp);
+        void update_child(Child temp,int id);
         void update_child(int id, int atributte, string s, string s2);
 
         #endregion
@@ -37,9 +37,9 @@ namespace BL
         #region contract fuctions
         void add_contract(Contract c);
         void add_contract_manually(Contract c);
-        void delete_contract(int num);
+        void delete_contract(Contract c);
 		void update_contract(int number, int attribute, string content);
-        void update_contract(int number, Contract c);
+        void update_contract(Contract c,int id);
         #endregion
 
         #region get list fuctions

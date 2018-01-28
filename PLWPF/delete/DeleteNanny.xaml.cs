@@ -30,9 +30,9 @@ namespace PLWPF.delete
 		{
 			try
 			{
-				int id = nanny.Id;
-				bl.delete_nanny(id);
-				MessageBox.Show("Nanny " + id + " has been deleted!");
+				//int id = nanny.Id;
+				bl.delete_nanny(nanny);
+				MessageBox.Show("Nanny " + nanny.Id + " has been deleted!");
 				Close();
 			}
 			catch (Exception ex)
