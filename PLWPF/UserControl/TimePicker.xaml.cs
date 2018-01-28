@@ -26,7 +26,8 @@ namespace PLWPF.MyUserControl
         }
 
         private void ChangeBrush(object sender, MouseButtonEventArgs e)
-        {
+        {//in order to change the control borders to red in case of exception
+            // we brush it to black initially
             this.textBox.BorderBrush = Brushes.Black;
             this.textBox1.BorderBrush = Brushes.Black;
         }

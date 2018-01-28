@@ -27,6 +27,7 @@ namespace PLWPF.edit
         {
             bl = factoryBL.get_bl();
             InitializeComponent();
+            //we fill a combo box with all the existent contracts numbers
             comboBox.ItemsSource = bl.get_contract_list();
             comboBox.DisplayMemberPath = "Number";
             comboBox.SelectedValuePath = "Number";
@@ -34,7 +35,8 @@ namespace PLWPF.edit
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that the combobox is changed
             #region clear boarders
             ContractNumberBox.BorderBrush = Brushes.Black;
             NannyIdBox.BorderBrush = Brushes.Black;
@@ -44,6 +46,9 @@ namespace PLWPF.edit
             StartDate.BorderBrush = Brushes.Black;
             EndDate.BorderBrush = Brushes.Black;
             #endregion
+
+            //we create a new object based on the selected Id from the combo box, so we fill all the window controls
+            // with this object properties
             c = (Contract)comboBox.SelectedItem;
             this.ContractNumberBox.Text = c.Number.ToString();
             this.NannyIdBox.Text = c.Nanny_Id.ToString();
@@ -79,7 +84,8 @@ namespace PLWPF.edit
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that we submit new data
             #region clear boarders
             ContractNumberBox.BorderBrush = Brushes.Black;
             NannyIdBox.BorderBrush = Brushes.Black;
@@ -92,7 +98,7 @@ namespace PLWPF.edit
             Contract temp = new Contract();
             int num;
             try
-            {
+            {//all the possibilities of enter data in the wrong type, as letters to string and so on, are covered here
                 if (!int.TryParse(ContractNumberBox.Text, out num))
                 {
                     ContractNumberBox.BorderBrush = Brushes.Red;
@@ -147,7 +153,7 @@ namespace PLWPF.edit
             catch (Exception ex)
             {
 
-
+                //This is a special Message to a Exception in the calendar control, when no date was choosed
                 if (ex.Message == "String was not recognized as a valid DateTime.")
                 {
                     this.StartDate.BorderBrush = Brushes.Red;
@@ -159,6 +165,7 @@ namespace PLWPF.edit
                 return;
             }
 
+            //these fields don't need exceptions
             if (this.meeting.IsChecked==true)
             {
                 temp.Introduction_meeting = true;
@@ -175,20 +182,20 @@ namespace PLWPF.edit
             {
                 temp.Signed = false;
             }
-            
+            //we create a new object with the data we collect from the window controls, after the updates
             c = (Contract)comboBox.SelectedItem;
             try
-            {
+            {//send the new contract object we created, with the changes we made, to the BL
                 bl.update_contract(temp, c.Number);
                 Close();
             }
             catch (Exception ex)
-            {
+            {//catches the Exceptions that cames from the other layers
                 MessageBox.Show(ex.Message);
             }
           
         }
-
+        //when the Hourly or Monthly radio button is checked we fill a label with the acording text
         private void radioButton_Copy_Checked(object sender, RoutedEventArgs e)
         {
             this.pricelabel.Content = "The hourly price is:";

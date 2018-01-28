@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace DAL_final
-{
+{//This class manages the Xml files, write the created objects in the Xml files, and convert the files data to objects
     public class Dal_XML_imp
     {
 
@@ -23,7 +23,6 @@ namespace DAL_final
         XElement Contracts;
 
 
-        // bool flag = true;
 
         string nannyXML = @"nanny.xml";
         string motherXML = @"motherXML.xml";
@@ -75,7 +74,7 @@ namespace DAL_final
         }
         #region Nannys
         XElement convertNannyToXML(Nanny n)
-        {
+        {//this function writes a nanny object in a Xml file
             if (n == null)
                 return null;
             XElement nannyElement = new XElement("nanny");
@@ -84,6 +83,10 @@ namespace DAL_final
                 string day;
                 string work;
                 string language;
+                //in order to write the boolean array ,the TimeSpan to the Xml file, or the Enum array
+                //we must to write every array member manually
+
+                //if this is not a "problematic" property, we can convert automatically to Xml
                 if (item.PropertyType.Name != "Boolean[]" && item.PropertyType.Name != "TimeSpan[,]" && item.PropertyType.Name != "List`1")
                 {
                     nannyElement.Add(new XElement(item.Name, item.GetValue(n, null)));
@@ -108,6 +111,7 @@ namespace DAL_final
                             nannyElement.Add(new XElement(work, n.Work_Hours[i,1]));
                         }
                     }
+                    //In case of Enum
                     if (item.PropertyType.Name == "List`1")
                     {
                         for (int i = 0; i < 5; i++)
@@ -131,18 +135,19 @@ namespace DAL_final
         }
 
         Nanny convertXMLToNanny(XElement x)
-        {
+        {//this function converts the Xml file to a nanny object
             if (x == null)
                 return null;
             Nanny n = new Nanny();
             foreach (PropertyInfo item in typeof(Nanny).GetProperties())
             {
 
-                //bool temp;
+                
                 object convertValue;
                 string day;
                 string time;
-                //string hour;
+                //if this is not a bool array property, or TimeSpan array property, or a Enum array property
+                //we can convert automatically
                 if (item.PropertyType.Name != "Boolean[]" && item.PropertyType.Name != "TimeSpan[,]" && item.PropertyType.Name != "List`1")
                 {
                     TypeConverter typeConverter = TypeDescriptor.GetConverter(item.PropertyType);
@@ -170,7 +175,7 @@ namespace DAL_final
 
                     }
                     if (item.PropertyType.Name == "TimeSpan[,]")
-                    {
+                    {//The TimeSpan is saved like"PT8H30M", so we must convert to a number that TimeSpan can receive
                         TypeConverter timeconverter = TypeDescriptor.GetConverter("TimeSpan");
                         for (int i = 0; i < 6; i++)
                         {
@@ -224,7 +229,7 @@ namespace DAL_final
                         }
 
                     }
-
+                    //if this is a Enum array property
                     if (item.PropertyType.Name == "List`1")
                     {
                         TypeConverter langconverter = TypeDescriptor.GetConverter("Language");
@@ -248,13 +253,14 @@ namespace DAL_final
             return n;
         }
         public Nanny GetNanny(long id)
-        {
+        {//this fuction returns a nanny by its Id
             return convertXMLToNanny((from e in Nannys.Elements()
                                       where Convert.ToInt64(e.Element("Id").Value) == id
                                       select e).FirstOrDefault());
         }
         public void add_nanny(Nanny n)
-        {
+        {//This function receives a nanny object, check if this nanny already exists in the data
+            // and adds it, in case that is a new nanny
 
             Nanny temp = new Nanny();
             temp = GetNanny(n.Id);
@@ -265,7 +271,8 @@ namespace DAL_final
         }
 
         public void delete_nanny(Nanny n)
-        {
+        {//This function receives a nanny object, check if this nanny already exists in the data
+            // and delete it, in case that is a existent nanny
 
             XElement temp = ((from e in Nannys.Elements()
                               where (Convert.ToInt64(e.Element("Id").Value) == n.Id)
@@ -277,7 +284,8 @@ namespace DAL_final
         }
 
         public void update_nanny(Nanny n,int id)
-        {
+        {//This function receives a nanny object, check if this nanny already exists in the data
+            // and replace it, in case that is a existent nanny
             XElement temp = ((from e in Nannys.Elements()
                               where (Convert.ToInt64(e.Element("Id").Value) == id)
                               select e).FirstOrDefault());
@@ -292,7 +300,7 @@ namespace DAL_final
         #region Mothers
 
         XElement convertMotherToXML(Mother m)
-        {
+        {//this function writes a mother object in a Xml file
             if (m == null)
                 return null;
             XElement motherElement = new XElement("mother");
@@ -300,7 +308,11 @@ namespace DAL_final
             {
                 string day;
                 string work;
-                string language;
+                
+                //in order to write the boolean array ,the TimeSpan to the Xml file
+                //we must to write every array member manually
+
+                //if this is not a "problematic" property, we can convert automatically to Xml
                 if (item.PropertyType.Name != "Boolean[]" && item.PropertyType.Name != "TimeSpan[,]")
                 {
                     motherElement.Add(new XElement(item.Name, item.GetValue(m, null)));
@@ -334,18 +346,19 @@ namespace DAL_final
         }
 
         Mother convertXMLToMother(XElement x)
-        {
+        {//this function converts the Xml file to a mother object
             if (x == null)
                 return null;
             Mother m = new Mother();
             foreach (PropertyInfo item in typeof(Mother).GetProperties())
             {
 
-                //bool temp;
+                
                 object convertValue;
                 string day;
                 string time;
-                //string hour;
+                //if this is not a bool array property, or TimeSpan array property
+                //we can convert automatically
                 if (item.PropertyType.Name != "Boolean[]" && item.PropertyType.Name != "TimeSpan[,]")
                 {
                     TypeConverter typeConverter = TypeDescriptor.GetConverter(item.PropertyType);
@@ -373,7 +386,7 @@ namespace DAL_final
 
                     }
                     if (item.PropertyType.Name == "TimeSpan[,]")
-                    {
+                    {//The TimeSpan is saved like"PT8H30M", so we must convert to a number that TimeSpan can receive
                         TypeConverter timeconverter = TypeDescriptor.GetConverter("TimeSpan");
                         for (int i = 0; i < 6; i++)
                         {
@@ -435,13 +448,14 @@ namespace DAL_final
             return m;
         }
         public Mother GetMother(long id)
-        {
+        {//this fuction returns a mother by its Id
             return convertXMLToMother((from e in Mothers.Elements()
                                        where Convert.ToInt64(e.Element("Id").Value) == id
                                        select e).FirstOrDefault());
         }
         public void add_mother(Mother m)
-        {
+        {//This function receives a mother object, check if this mother already exists in the data
+            // and adds it, in case that is a new mother
 
             Mother temp = new Mother();
             temp = GetMother(m.Id);
@@ -452,7 +466,8 @@ namespace DAL_final
         }
 
         public void delete_mother(Mother m)
-        {
+        {//This function receives a mother object, check if this mother already exists in the data
+            // and deletes it, in case that is a existent mother
 
             XElement temp = ((from e in Mothers.Elements()
                               where (Convert.ToInt64(e.Element("Id").Value) == m.Id)
@@ -464,7 +479,8 @@ namespace DAL_final
         }
 
         public void update_mother(Mother m,int id)
-        {
+        {//This function receives a mother object, check if this mother already exists in the data
+            // and replaces it, in case that is a existent mother
             XElement temp = ((from e in Mothers.Elements()
                               where (Convert.ToInt64(e.Element("Id").Value) == id)
                               select e).FirstOrDefault());
@@ -477,7 +493,7 @@ namespace DAL_final
 
         #region Children
         XElement convertChildToXML(Child c)
-        {
+        {//this function writes a child object in a Xml file
             if (c == null)
                 return null;
             XElement childElement = new XElement("child");
@@ -490,7 +506,7 @@ namespace DAL_final
         }
 
         Child convertXMLToChild(XElement x)
-        {
+        {//this function converts the Xml file to a child object
             if (x == null)
                 return null;
             Child c = new Child();
@@ -504,13 +520,14 @@ namespace DAL_final
             return c;
         }
         public Child GetChild(long id)
-        {
+        {//this fuction returns a child by its Id
             return convertXMLToChild((from e in Children.Elements()
                                       where Convert.ToInt64(e.Element("Id").Value) == id
                                       select e).FirstOrDefault());
         }
         public void add_child(Child c)
-        {
+        {//This function receives a child object, check if this child already exists in the data
+            // and adds it, in case that is a new child
 
             Child temp = new Child();
             temp = GetChild(c.Id);
@@ -521,7 +538,8 @@ namespace DAL_final
         }
 
         public void delete_child(Child c)
-        {
+        {//This function receives a child object, check if this child already exists in the data
+            // and deletes it, in case that is a existent child
 
             XElement temp = ((from e in Children.Elements()
                               where (Convert.ToInt64(e.Element("Id").Value) == c.Id)
@@ -533,7 +551,8 @@ namespace DAL_final
         }
 
         public void update_child(Child c,int id)
-        {
+        {//This function receives a child object, check if this child already exists in the data
+            // and updates it, in case that is a existent child
             XElement temp = ((from e in Children.Elements()
                               where (Convert.ToInt64(e.Element("Id").Value) == id)
                               select e).FirstOrDefault());
@@ -546,7 +565,7 @@ namespace DAL_final
 
         #region contract
         XElement convertContractToXML(Contract c)
-        {
+        {//this function writes a contract object in a Xml file
             if (c == null)
                 return null;
             XElement contractElement = new XElement("contract");
@@ -559,7 +578,7 @@ namespace DAL_final
         }
 
         Contract convertXMLToContract(XElement x)
-        {
+        {//this function converts the Xml file to a contract object
             if (x == null)
                 return null;
             Contract c = new Contract();
@@ -573,13 +592,14 @@ namespace DAL_final
             return c;
         }
         public Contract GetContract(long id)
-        {
+        {//this fuction returns a contract by its Id
             return convertXMLToContract((from e in Contracts.Elements()
                                          where Convert.ToInt64(e.Element("Number").Value) == id
                                          select e).FirstOrDefault());
         }
         public void add_contract(Contract c)
-        {
+        {//This function receives a contract object, check if this contract already exists in the data
+            // and adds it, in case that is a new contract
 
             Contract temp = new Contract();
             temp = GetContract(c.Number);
@@ -590,7 +610,8 @@ namespace DAL_final
         }
 
         public void delete_contract(Contract c)
-        {
+        {//This function receives a contract object, check if this contract already exists in the data
+            // and deletes it, in case that is a existent contract
 
             XElement temp = ((from e in Contracts.Elements()
                               where (Convert.ToInt64(e.Element("Number").Value) == c.Number)
@@ -602,7 +623,8 @@ namespace DAL_final
         }
 
         public void update_contract(Contract c,int id)
-        {
+        {//This function receives a contract object, check if this contract already exists in the data
+            // and updates it, in case that is a existent contract
             XElement temp = ((from e in Contracts.Elements()
                               where (Convert.ToInt64(e.Element("Number").Value) == id)
                               select e).FirstOrDefault());
@@ -616,7 +638,7 @@ namespace DAL_final
 
         #region GetList
         public List<Nanny> get_nanny_list()
-        {
+        {//Convert all the Nannys in the xml file to a List
             List<Nanny> ListNanny = new List<Nanny>();
             var items = from temp in Nannys.Elements()
                         select convertXMLToNanny(temp);
@@ -626,7 +648,7 @@ namespace DAL_final
         }
 
         public List<Mother> get_mother_list()
-        {
+        {//Convert all the Mothers in the xml file to a List
             List<Mother> ListMother = new List<Mother>();
             var items = from temp in Mothers.Elements()
                         select convertXMLToMother(temp);
@@ -635,7 +657,7 @@ namespace DAL_final
 
         }
         public List<Child> get_child_list()
-        {
+        {//Convert all the Children in the xml file to a List
             List<Child> ListChildren = new List<Child>();
             var items = from temp in Children.Elements()
                         select convertXMLToChild(temp);
@@ -644,7 +666,7 @@ namespace DAL_final
 
         }
         public List<Contract> get_contract_list()
-        {
+        {//Convert all the Contracts in the xml file to a List
             List<Contract> ListContract = new List<Contract>();
             var items = from temp in Contracts.Elements()
                         select convertXMLToContract(temp);

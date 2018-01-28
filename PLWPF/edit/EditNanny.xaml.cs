@@ -29,13 +29,15 @@ namespace PLWPF.edit
             bl = factoryBL.get_bl();
             nanny = new Nanny(); 
             InitializeComponent();
+            //we fill a combo box with all the existent nannys Id
             comboBox.ItemsSource = bl.get_nanny_list();
             comboBox.DisplayMemberPath = "Id";
             comboBox.SelectedValuePath = "Id";
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that the combobox is changed
             #region clear boarders
             IdBox.BorderBrush = Brushes.Black;
             FloorBox.BorderBrush = Brushes.Black;
@@ -70,6 +72,9 @@ namespace PLWPF.edit
             FridayEnd.textBox.BorderBrush = Brushes.Black;
             FridayEnd.textBox1.BorderBrush = Brushes.Black;
             #endregion
+
+            // we create a new object based on the selected Id from the combo box, so we fill all the window controls
+            // with this object properties
             nanny = (Nanny)comboBox.SelectedItem;
             this.AddressBox.Text = nanny.Address;
             this.BirthDayBox.Text = nanny.Birth_Date.ToString();
@@ -136,7 +141,8 @@ namespace PLWPF.edit
                     yidishbox.IsChecked = true;
                 }
             }
-            
+            //every time the combo box is changed we must clear all the the TimePickers and Week days checkbox
+            //in order to show the accure data
             #region erase work days
             this.SundayButton.IsChecked = false;
             this.MondayButton.IsChecked = false;
@@ -223,6 +229,8 @@ namespace PLWPF.edit
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            //in order to brush the border of the wrong text box to red when a exception is catched, 
+            // we must brush all the borders to black every time that we submit new data
             #region clear boarders
             IdBox.BorderBrush = Brushes.Black;
             FloorBox.BorderBrush = Brushes.Black;
@@ -261,7 +269,7 @@ namespace PLWPF.edit
             int num;
             TimeSpan result;
             try
-            {
+            {//all the possibilities of enter data in the wrong type, as letters to string and so on, are covered here
                 if (!int.TryParse(IdBox.Text, out num))
                 {
                     IdBox.BorderBrush = Brushes.Red;
@@ -324,7 +332,7 @@ namespace PLWPF.edit
                 }
 
                 if (SundayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (SundayStart.textBox.Text == "")
                     {
                         SundayStart.textBox.Text = "00";
@@ -364,7 +372,7 @@ namespace PLWPF.edit
                 }
                 else temp.Works_On_Day[0] = false;
                 if (MondayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (MondayStart.textBox.Text == "")
                     {
                         MondayStart.textBox.Text = "00";
@@ -402,7 +410,7 @@ namespace PLWPF.edit
                 }
                 else temp.Works_On_Day[1] = false;
                 if (TuesdayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (TuesdayStart.textBox.Text == "")
                     {
                         TuesdayStart.textBox.Text = "00";
@@ -441,7 +449,7 @@ namespace PLWPF.edit
                 }
                 else temp.Works_On_Day[2] = false;
                 if (WednesdayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (WednesdayStart.textBox.Text == "")
                     {
                         WednesdayStart.textBox.Text = "00";
@@ -480,7 +488,7 @@ namespace PLWPF.edit
                 }
                 else temp.Works_On_Day[3] = false;
                 if (ThursdayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (ThursdayStart.textBox.Text == "")
                     {
                         ThursdayStart.textBox.Text = "00";
@@ -519,7 +527,7 @@ namespace PLWPF.edit
                 }
                 else temp.Works_On_Day[4] = false;
                 if (FridayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (FridayStart.textBox.Text == "")
                     {
                         FridayStart.textBox.Text = "00";
@@ -560,15 +568,8 @@ namespace PLWPF.edit
             }
             catch (Exception ex)
             {
-                //ExceptionWindow win = new ExceptionWindow();
-
-                //if (ex.Message == "Input string was not in a correct format.")
-                //{
-                //    //win.Exception_label.Content = "You must enter a digit to Id";
-                //    // win.Exception_label.Content = ex.Message;
-                //    MessageBox.Show(ex.Message);
-                //}
-
+                
+                //If the calendar control is empty
                 if (ex.Message == "String was not recognized as a valid DateTime.")
                 {
                     BirthDayBox.BorderBrush = Brushes.Red;
@@ -581,7 +582,7 @@ namespace PLWPF.edit
                 return;
             }
 
-
+            //these fields don't need exceptions
             temp.First_Name = FirstNameBox.Text;
             temp.Family_Name = LastNameBox.Text;
             temp.Address = AddressBox.Text;
@@ -598,7 +599,7 @@ namespace PLWPF.edit
             
             
 
-            //temp.Lang = (Language)Enum.Parse(typeof(Language),comboBox.Text);
+            
             
             temp.Recommendations = RecomendationBox.Text;
 
@@ -637,15 +638,16 @@ namespace PLWPF.edit
             }
            
         }
-
+        //when the Hourly or Monthly radio button is checked we fill a label with the acording text
         private void monthly_clicked(object sender, RoutedEventArgs e)
         {
-
+            price_label.Content = " The monthly price is:";
         }
 
         private void week_clicked(object sender, RoutedEventArgs e)
         {
-
+            price_label.Content = " The hourly price is:";
+            
         }
     }
 }

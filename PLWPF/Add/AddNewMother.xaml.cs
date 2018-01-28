@@ -31,7 +31,8 @@ namespace PLWPF.Add
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that we submit new data
             #region clear boarders
             IdBox.BorderBrush = Brushes.Black;
             MaxTravelDistanceBox.BorderBrush = Brushes.Black;
@@ -64,7 +65,7 @@ namespace PLWPF.Add
             int num;
             TimeSpan result;
             try
-            {
+            {//all the possibilities of enter data in the wrong type, as letters to string and so on, are covered here
                 if (!int.TryParse(IdBox.Text, out num))
                 {
                     IdBox.BorderBrush = Brushes.Red;
@@ -82,7 +83,7 @@ namespace PLWPF.Add
                 temp.Max_Travel_Distance = int.Parse(MaxTravelDistanceBox.Text);
 
                 if (SundayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (Sundaystart.textBox.Text == "")
                     {
                         Sundaystart.textBox.Text = "00";
@@ -319,41 +320,25 @@ namespace PLWPF.Add
             }
             catch(Exception ex)
             {
-                //ExceptionWindow win = new ExceptionWindow();
-
-                //if (ex.Message == "Input string was not in a correct format.")
-                //{
-                //    //win.Exception_label.Content = "You must enter a digit to Id";
-                //    // win.Exception_label.Content = ex.Message;
-                //    MessageBox.Show(ex.Message);
-                //}
+                //we shows the exception message in a new message box
                 MessageBox.Show(ex.Message);
                 return;
-                //if (ex.Message == "String was not recognized as a valid DateTime.")
-                //{
-                //    BirthDayBox.BorderBrush = Brushes.Red;
-                //    MessageBox.Show("You must choose a date in the calender");
-                //    return;
-                //}
-                //if (ex.Message == "String was not recognized as a valid TimeSpan.")
-                //{
-                //    MessageBox.Show("You must enter a digit to the work hour box");
-                //}
+                
             }
-            
-            
+
+            //this fields don't need exceptions
             temp.First_Name = FIrstNameBox.Text;
             temp.Family_Name = LastNameBox.Text;
             temp.Home_Address = AddressBox.Text;
             temp.Second_Address = SecondAddressBox.Text;
             temp.Telephone_Number = TelephoneBox.Text;
             try
-            {
+            {//we send the mother object we created to the BL
                  bl.add_mother(temp);
                 Close();
             }
             catch (Exception ex)
-            {
+            {//catchs the Exceptions that cames from the other layers
                 MessageBox.Show(ex.Message);
             }
            

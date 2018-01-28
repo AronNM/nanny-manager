@@ -1,4 +1,10 @@
-﻿<Window x:Class="PLWPF.Add.AddNewContract"
+﻿<!-- This window adds a new contract manually to the data-->
+<!-- When the PriceLabel radio button is pressed, the priceLabel is filled automatically -->
+    <!-- We setted the textbox borders to black color with BorderBrush property, in order to make it red when a exception is cathed-->
+
+<!-- All the textboxes are covered by exceptions, that opens in a new message box -->
+
+<Window x:Class="PLWPF.Add.AddNewContract"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"

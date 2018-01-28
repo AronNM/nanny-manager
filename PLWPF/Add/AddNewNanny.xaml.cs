@@ -41,7 +41,8 @@ namespace PLWPF.Add
         }
         
         private void button_Click(object sender, RoutedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that we submit new data
             #region clear boarders
             IdBox.BorderBrush = Brushes.Black;
             FloorBox.BorderBrush = Brushes.Black;
@@ -80,7 +81,7 @@ namespace PLWPF.Add
             int num;
             TimeSpan result;
             try
-            {
+            {//all the possibilities of enter data in the wrong type, as letters to string and so on, are covered here
                 if(!int.TryParse(IdBox.Text,out num))
                 {
                     IdBox.BorderBrush = Brushes.Red;
@@ -143,7 +144,7 @@ namespace PLWPF.Add
                 }
 
                 if (SundayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (Sundaystart.textBox.Text == "")
                     {
                         Sundaystart.textBox.Text = "00";
@@ -379,15 +380,7 @@ namespace PLWPF.Add
             }
             catch(Exception ex)
             {
-                //ExceptionWindow win = new ExceptionWindow();
-
-                //if (ex.Message == "Input string was not in a correct format.")
-                //{
-                //    //win.Exception_label.Content = "You must enter a digit to Id";
-                //    // win.Exception_label.Content = ex.Message;
-                //    MessageBox.Show(ex.Message);
-                //}
-                
+               //This is a special Message to a Exception in the calendar control, when no date was choosed
                 if (ex.Message == "String was not recognized as a valid DateTime.")
                 {
                     BirthDayBox.BorderBrush = Brushes.Red;
@@ -395,7 +388,7 @@ namespace PLWPF.Add
                     return;
                     
                 }
-                
+                //we shows the exception message in a new message box
                 MessageBox.Show(ex.Message);
                 return;
             }
@@ -403,7 +396,7 @@ namespace PLWPF.Add
 
             
                 
-                
+                //these fields don't need exceptions
                 temp.First_Name = FirstNameBox.Text;
                 temp.Family_Name = LastNameBox.Text;
                 temp.Address = AddressBox.Text;
@@ -420,7 +413,7 @@ namespace PLWPF.Add
                 
                 
 
-                //temp.Lang = (Language)Enum.Parse(typeof(Language),comboBox.Text);
+                
                 
                 temp.Recommendations = RecomendationBox.Text;
 
@@ -448,13 +441,13 @@ namespace PLWPF.Add
                     temp.Lang.Add(BE.Language.YIDDISH);
                 }
             try
-            {
+            {//send the new nanny object we created, to the BL 
                 bl.add_nanny(temp);
                 Close();
 
             }
             catch (Exception ex)
-            {
+            {//catchs the Exceptions that cames from the other layers
                 MessageBox.Show(ex.Message);
             }
 
@@ -465,7 +458,7 @@ namespace PLWPF.Add
         }
 
         
-
+        //when the Hourly or Monthly radio button is checked we fill a label with the acording text
         private void week_clicked(object sender, RoutedEventArgs e)
         {
             price_label.Content = " The hourly price is:";

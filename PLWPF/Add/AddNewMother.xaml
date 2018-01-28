@@ -1,4 +1,10 @@
-﻿<Window
+﻿<!-- This window adds a new mother to the data-->
+<!-- In this window we use the User Control Time Picker, and which couple of TimePickers are binded to their respective Check Box IsChecked Property -->
+<!-- We setted the textbox borders to black with BorderBrush property, in order to make it red when a exception is cathed-->
+
+<!-- All the textboxes are covered by exceptions, that opens in a new message box -->
+
+<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"

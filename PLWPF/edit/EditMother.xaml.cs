@@ -29,13 +29,15 @@ namespace PLWPF.edit
             bl = factoryBL.get_bl();
             mother = new Mother();
             InitializeComponent();
+            //we fill a combo box with all the existent Id mothers
             comboBox.ItemsSource = bl.get_mother_list();
             comboBox.DisplayMemberPath = "Id";
             comboBox.SelectedValuePath = "Id";
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that the combobox is changed
             #region clear boarders
             IdBox.BorderBrush = Brushes.Black;
             MaxTravelDistanceBox.BorderBrush = Brushes.Black;
@@ -64,7 +66,9 @@ namespace PLWPF.edit
             FridayEnd.textBox.BorderBrush = Brushes.Black;
             FridayEnd.textBox1.BorderBrush = Brushes.Black;
             #endregion
-            mother = (Mother)comboBox.SelectedItem;
+            // we create a new object based on the selected Id from the combo box, so we fill all the window controls
+             // with this object properties
+             mother = (Mother)comboBox.SelectedItem;
             this.IdBox.Text = mother.Id.ToString();
             this.FIrstNameBox.Text = mother.First_Name;
             this.LastNameBox.Text = mother.Family_Name;
@@ -72,6 +76,8 @@ namespace PLWPF.edit
             this.AddressBox.Text = mother.Home_Address;
             this.SecondAddressBox.Text = mother.Second_Address;
             this.MaxTravelDistanceBox.Text = mother.Max_Travel_Distance.ToString();
+            //every time the combo box is changed we must clear all the the TimePickers and Week days checkbox
+            //in order to show the accure data
             #region erase boxes
             this.SundayButton.IsChecked = false;
             this.MondayButton.IsChecked = false;
@@ -157,7 +163,8 @@ namespace PLWPF.edit
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that we submit new data
             #region clear boarders
             IdBox.BorderBrush = Brushes.Black;
             MaxTravelDistanceBox.BorderBrush = Brushes.Black;
@@ -190,7 +197,7 @@ namespace PLWPF.edit
             int num;
             TimeSpan result;
             try
-            {
+            {//all the possibilities of enter data in the wrong type, as letters to string and so on, are covered here
                 if (!int.TryParse(IdBox.Text, out num))
                 {
                     IdBox.BorderBrush = Brushes.Red;
@@ -208,7 +215,7 @@ namespace PLWPF.edit
                 temp.Max_Travel_Distance = int.Parse(MaxTravelDistanceBox.Text);
 
                 if (SundayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (Sundaystart.textBox.Text == "")
                     {
                         Sundaystart.textBox.Text = "00";
@@ -247,7 +254,7 @@ namespace PLWPF.edit
                 }
                 else temp.Needs_On_Day[0] = false;
                 if (MondayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (MondayStart.textBox.Text == "")
                     {
                         MondayStart.textBox.Text = "00";
@@ -286,7 +293,7 @@ namespace PLWPF.edit
                 }
                 else temp.Needs_On_Day[1] = false;
                 if (TuesdayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (TuesdayStart.textBox.Text == "")
                     {
                         TuesdayStart.textBox.Text = "00";
@@ -325,7 +332,7 @@ namespace PLWPF.edit
                 }
                 else temp.Needs_On_Day[2] = false;
                 if (WednesdayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (WednesdayStart.textBox.Text == "")
                     {
                         WednesdayStart.textBox.Text = "00";
@@ -364,7 +371,7 @@ namespace PLWPF.edit
                 }
                 else temp.Needs_On_Day[3] = false;
                 if (ThursdayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (ThursdayStart.textBox.Text == "")
                     {
                         ThursdayStart.textBox.Text = "00";
@@ -403,7 +410,7 @@ namespace PLWPF.edit
                 }
                 else temp.Needs_On_Day[4] = false;
                 if (FridayButton.IsChecked == true)
-                {
+                {//if the TimePicker Box was not filled, we fill it 00
                     if (FridayStart.textBox.Text == "")
                     {
                         FridayStart.textBox.Text = "00";
@@ -445,42 +452,26 @@ namespace PLWPF.edit
             }
             catch (Exception ex)
             {
-                //ExceptionWindow win = new ExceptionWindow();
-
-                //if (ex.Message == "Input string was not in a correct format.")
-                //{
-                //    //win.Exception_label.Content = "You must enter a digit to Id";
-                //    // win.Exception_label.Content = ex.Message;
-                //    MessageBox.Show(ex.Message);
-                //}
+                
                 MessageBox.Show(ex.Message);
                 return;
-                //if (ex.Message == "String was not recognized as a valid DateTime.")
-                //{
-                //    BirthDayBox.BorderBrush = Brushes.Red;
-                //    MessageBox.Show("You must choose a date in the calender");
-                //    return;
-                //}
-                //if (ex.Message == "String was not recognized as a valid TimeSpan.")
-                //{
-                //    MessageBox.Show("You must enter a digit to the work hour box");
-                //}
+                
             }
-
+            //these fields don't need exceptions
             temp.First_Name = this.FIrstNameBox.Text;
             temp.Family_Name = this.LastNameBox.Text;
             temp.Home_Address = this.AddressBox.Text;
             temp.Second_Address = this.SecondAddressBox.Text;
             temp.Telephone_Number = this.TelephoneBox.Text;
-
+            //we create a new object with the data we collect from the window controls, after the updates
             mother = (Mother)comboBox.SelectedItem;
             try
-            {
+            {//we send the new object to the BL
                 bl.update_mother(temp, mother.Id);
                 Close();
             }
             catch (Exception ex)
-            {
+            {//catches the Exceptions that cames from the other layers
                 MessageBox.Show(ex.Message);
             }
 

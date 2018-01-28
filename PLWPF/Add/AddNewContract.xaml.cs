@@ -27,7 +27,7 @@ namespace PLWPF.Add
             bl = factoryBL.get_bl();
             InitializeComponent();
         }
-
+        //when the Hourly or Monthly radio button is checked we fill a label with the acording text
         private void radioButton_Copy_Checked(object sender, RoutedEventArgs e)
         {
             this.pricelabel.Content = "The hourly price is:";
@@ -39,7 +39,8 @@ namespace PLWPF.Add
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
-        {
+        {//in order to brush the border of the wrong text box to red when a exception is catched, 
+         // we must brush all the borders to black every time that we submit new data
             #region clear boarders
             ContractNumberBox.BorderBrush = Brushes.Black;
             NannyIdBox.BorderBrush = Brushes.Black;
@@ -52,7 +53,7 @@ namespace PLWPF.Add
             Contract c = new Contract();
             int num;
             try
-            {
+            {//all the possibilities of enter data in the wrong type, as letters to string and so on, are covered here
                 if (!int.TryParse(ContractNumberBox.Text, out num))
                 {
                     ContractNumberBox.BorderBrush = Brushes.Red;
@@ -106,8 +107,8 @@ namespace PLWPF.Add
             }
             catch(Exception ex)
             {
-                
 
+                //This is a special Message to a Exception in the calendar control, when no date was choosed
                 if (ex.Message == "String was not recognized as a valid DateTime.")
                 {
                     this.StartDate.BorderBrush = Brushes.Red;
@@ -118,7 +119,7 @@ namespace PLWPF.Add
                 MessageBox.Show(ex.Message);
                 return;
             }
-            
+            //these fields don't need exceptions
             if (this.meeting.IsChecked == true)
             {
                 c.Introduction_meeting = true;
@@ -137,12 +138,12 @@ namespace PLWPF.Add
             }
 
             try
-            {
+            {//send the new contract object we created, to the BL 
                 bl.add_contract_manually(c);
                 Close();
             }
             catch (Exception ex)
-            {
+            {//catchs the Exceptions that cames from the other layers
                 MessageBox.Show(ex.Message);
             }
            
