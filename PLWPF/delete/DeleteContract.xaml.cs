@@ -30,9 +30,9 @@ namespace PLWPF.delete
 		{
 			try
 			{
-				int id = contract.Number;
-				bl.delete_contract(id);
-				MessageBox.Show("contract " + id + " has been deleted!");
+				//int id = contract.Number;
+				bl.delete_contract(contract);
+				MessageBox.Show("contract " + contract.Number + " has been deleted!");
 				Close();
 			}
 			catch (Exception ex)

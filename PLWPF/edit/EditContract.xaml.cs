@@ -35,6 +35,15 @@ namespace PLWPF.edit
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            #region clear boarders
+            ContractNumberBox.BorderBrush = Brushes.Black;
+            NannyIdBox.BorderBrush = Brushes.Black;
+            ChildIdBox.BorderBrush = Brushes.Black;
+            MotherIdBox.BorderBrush = Brushes.Black;
+            priceBox.BorderBrush = Brushes.Black;
+            StartDate.BorderBrush = Brushes.Black;
+            EndDate.BorderBrush = Brushes.Black;
+            #endregion
             c = (Contract)comboBox.SelectedItem;
             this.ContractNumberBox.Text = c.Number.ToString();
             this.NannyIdBox.Text = c.Nanny_Id.ToString();
@@ -71,12 +80,86 @@ namespace PLWPF.edit
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            #region clear boarders
+            ContractNumberBox.BorderBrush = Brushes.Black;
+            NannyIdBox.BorderBrush = Brushes.Black;
+            ChildIdBox.BorderBrush = Brushes.Black;
+            MotherIdBox.BorderBrush = Brushes.Black;
+            priceBox.BorderBrush = Brushes.Black;
+            StartDate.BorderBrush = Brushes.Black;
+            EndDate.BorderBrush = Brushes.Black;
+            #endregion
             Contract temp = new Contract();
-            temp.Number = int.Parse(this.ContractNumberBox.Text);
-            temp.Nanny_Id = int.Parse(this.NannyIdBox.Text);
-            temp.Mother_Id = int.Parse(this.MotherIdBox.Text);
-            temp.Child_Id = int.Parse(this.ChildIdBox.Text);
-            if(this.meeting.IsChecked==true)
+            int num;
+            try
+            {
+                if (!int.TryParse(ContractNumberBox.Text, out num))
+                {
+                    ContractNumberBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the contract number box.");
+
+                }
+                c.Number = int.Parse(this.ContractNumberBox.Text);
+
+                if (!int.TryParse(NannyIdBox.Text, out num))
+                {
+                    NannyIdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Nanny Id box.");
+
+                }
+                c.Nanny_Id = int.Parse(this.NannyIdBox.Text);
+
+                if (!int.TryParse(MotherIdBox.Text, out num))
+                {
+                    MotherIdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Mother Id box.");
+
+                }
+                c.Mother_Id = int.Parse(this.MotherIdBox.Text);
+
+                if (!int.TryParse(ChildIdBox.Text, out num))
+                {
+                    ChildIdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Child Id box.");
+
+                }
+                c.Child_Id = int.Parse(this.ChildIdBox.Text);
+
+                if (!int.TryParse(priceBox.Text, out num))
+                {
+                    priceBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Price box.");
+
+                }
+                if (this.hourly_yes.IsChecked == true)
+                {
+                    c.Price_Is_Hourly = true;
+                    c.Hourly_Price = double.Parse(priceBox.Text);
+                }
+                if (this.hourly_no.IsChecked == true)
+                {
+                    c.Price_Is_Hourly = false;
+                    c.Monthly_Price = double.Parse(this.priceBox.Text);
+                }
+                c.Starts = Convert.ToDateTime(this.StartDate.Text);
+                c.Ends = Convert.ToDateTime(this.EndDate.Text);
+            }
+            catch (Exception ex)
+            {
+
+
+                if (ex.Message == "String was not recognized as a valid DateTime.")
+                {
+                    this.StartDate.BorderBrush = Brushes.Red;
+                    this.EndDate.BorderBrush = Brushes.Red;
+                    MessageBox.Show("You must choose a date in the calender");
+                    return;
+                }
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            if (this.meeting.IsChecked==true)
             {
                 temp.Introduction_meeting = true;
             }
@@ -92,21 +175,18 @@ namespace PLWPF.edit
             {
                 temp.Signed = false;
             }
-            if(this.hourly_yes.IsChecked==true)
-            {
-                temp.Price_Is_Hourly = true;
-                temp.Hourly_Price = double.Parse(this.priceBox.Text);
-            }
-            if (this.hourly_no.IsChecked == true)
-            {
-                temp.Price_Is_Hourly = false;
-                temp.Monthly_Price = double.Parse(this.priceBox.Text);
-            }
-            temp.Starts = Convert.ToDateTime(this.StartDate.Text);
-            temp.Ends = Convert.ToDateTime(this.EndDate.Text);
+            
             c = (Contract)comboBox.SelectedItem;
-            bl.update_contract(c.Number, temp);
-            Close();
+            try
+            {
+                bl.update_contract(temp, c.Number);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
         }
 
         private void radioButton_Copy_Checked(object sender, RoutedEventArgs e)

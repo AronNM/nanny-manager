@@ -40,11 +40,85 @@ namespace PLWPF.Add
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            #region clear boarders
+            ContractNumberBox.BorderBrush = Brushes.Black;
+            NannyIdBox.BorderBrush = Brushes.Black;
+            ChildIdBox.BorderBrush = Brushes.Black;
+            MotherIdBox.BorderBrush = Brushes.Black;
+            priceBox.BorderBrush = Brushes.Black;
+            StartDate.BorderBrush = Brushes.Black;
+            EndDate.BorderBrush = Brushes.Black;
+            #endregion
             Contract c = new Contract();
-            c.Number = int.Parse(this.ContractNumberBox.Text);
-            c.Nanny_Id = int.Parse(this.NannyIdBox.Text);
-            c.Mother_Id = int.Parse(this.MotherIdBox.Text);
-            c.Child_Id = int.Parse(this.ChildIdBox.Text);
+            int num;
+            try
+            {
+                if (!int.TryParse(ContractNumberBox.Text, out num))
+                {
+                    ContractNumberBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the contract number box.");
+
+                }
+                c.Number = int.Parse(this.ContractNumberBox.Text);
+
+                if (!int.TryParse(NannyIdBox.Text, out num))
+                {
+                    NannyIdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Nanny Id box.");
+
+                }
+                c.Nanny_Id = int.Parse(this.NannyIdBox.Text);
+
+                if (!int.TryParse(MotherIdBox.Text, out num))
+                {
+                    MotherIdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Mother Id box.");
+
+                }
+                c.Mother_Id = int.Parse(this.MotherIdBox.Text);
+
+                if (!int.TryParse(ChildIdBox.Text, out num))
+                {
+                    ChildIdBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Child Id box.");
+
+                }
+                c.Child_Id = int.Parse(this.ChildIdBox.Text);
+
+                if (!int.TryParse(priceBox.Text, out num))
+                {
+                    priceBox.BorderBrush = Brushes.Red;
+                    throw new Exception("You must enter a digit in the Price box.");
+
+                }
+                if (this.hourly_yes.IsChecked == true)
+                {
+                    c.Price_Is_Hourly = true;
+                    c.Hourly_Price = double.Parse(priceBox.Text);
+                }
+                if (this.hourly_no.IsChecked == true)
+                {
+                    c.Price_Is_Hourly = false;
+                    c.Monthly_Price = double.Parse(this.priceBox.Text);
+                }
+                c.Starts = Convert.ToDateTime(this.StartDate.Text);
+                c.Ends = Convert.ToDateTime(this.EndDate.Text);
+            }
+            catch(Exception ex)
+            {
+                
+
+                if (ex.Message == "String was not recognized as a valid DateTime.")
+                {
+                    this.StartDate.BorderBrush = Brushes.Red;
+                    this.EndDate.BorderBrush = Brushes.Red;
+                    MessageBox.Show("You must choose a date in the calender");
+                    return;
+                }
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            
             if (this.meeting.IsChecked == true)
             {
                 c.Introduction_meeting = true;
@@ -61,21 +135,17 @@ namespace PLWPF.Add
             {
                 c.Signed= false;
             }
-            if (this.hourly_yes.IsChecked == true)
-            {
-                c.Price_Is_Hourly = true;
-                c.Hourly_Price = double.Parse(priceBox.Text);
-            }
-            if (this.hourly_no.IsChecked == true)
-            {
-                c.Price_Is_Hourly=false;
-                c.Monthly_Price = double.Parse(this.priceBox.Text);
-            }
-            c.Starts = Convert.ToDateTime(this.StartDate.Text);
-            c.Ends= Convert.ToDateTime(this.EndDate.Text);
 
-            bl.add_contract_manually(c);
-            Close();
+            try
+            {
+                bl.add_contract_manually(c);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }

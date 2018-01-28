@@ -30,10 +30,10 @@
                 <RowDefinition Height="29*"/>
                 <RowDefinition Height="29*"/>
                 <RowDefinition Height="29*"/>
-                
-                
-                
-               
+
+
+
+
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -59,17 +59,18 @@
             <Label x:Name="Label14" Style="{DynamicResource SmallTextStyle}" Content="Maximum children age" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="29" Margin="55,29,196,5" Width="158" Grid.Column="1" Grid.RowSpan="2"/>
             <Label x:Name="Label15" Style="{DynamicResource SmallTextStyle}" Content="Minimum children age" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" Height="27" Margin="55,0,200,5" Width="154" Grid.Column="1"/>
             <Label x:Name="Label16" Style="{DynamicResource SmallTextStyle}" Content="Recomendations" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Height="24" Margin="55,2,242,5" Width="112" Grid.Column="1"/>
-            <TextBox x:Name="IdBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="0" VerticalAlignment="Center" TextWrapping="Wrap" Margin="261,5,10,6" Width="52" Height="20" />
-            <TextBox x:Name="FirstNameBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="261,0,10,2" Width="52" Height="20" />
-            <TextBox x:Name="LastNameBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" TextWrapping="Wrap" Margin="261,6,10,6" Width="52" Height="20" />
-            <TextBox x:Name="AddressBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" TextWrapping="Wrap" Margin="261,6,10,5" Width="52" Height="20" />
-            <TextBox x:Name="TelephoneBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="5" VerticalAlignment="Center" TextWrapping="Wrap" Margin="261,8,10,10" Width="52" Height="17" />
-            <TextBox x:Name="ExperienceYearsBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="7" VerticalAlignment="Center" TextWrapping="Wrap" Margin="261,10,10,2" Width="52" Height="20" />
-            <TextBox x:Name="FloorBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="8" VerticalAlignment="Center" TextWrapping="Wrap" Margin="261,3,10,8" Width="52" Height="20" />
-            <TextBox x:Name="NUmberChildrenBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="245,5,112,6" Width="52" Height="20" />
-            <TextBox x:Name="MaxAgeBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="245,3,112,9" Width="52" Height="20" />
-            <TextBox x:Name="MinAgeBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" TextWrapping="Wrap" Margin="245,0,112,5" Width="52" Height="20" />
-            <TextBox x:Name="RecomendationBox" FontFamily="Ariel" Foreground="Gray"  HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="245,6,112,5" Width="52" Height="20" RenderTransformOrigin="0.5,0.65" />
+            <TextBox x:Name="IdBox" BorderBrush="Black"  HorizontalAlignment="Left"  Grid.Row="0" VerticalAlignment="Top" TextWrapping="Wrap" Text="              " Margin="246,9,0,0" Width="52" Height="20"  />
+            <TextBox x:Name="PriceBox" BorderBrush="Black" HorizontalAlignment="Left" Height="20" Margin="255,4,0,0" Grid.Row="10" TextWrapping="Wrap" Text="              " VerticalAlignment="Top" Width="52"/>
+            <TextBox x:Name="FirstNameBox" BorderBrush="Black"  HorizontalAlignment="Left" VerticalAlignment="Top"  Grid.Row="1"  TextWrapping="Wrap" Margin="246,7,0,0" Width="52" Height="20"  />
+            <TextBox x:Name="LastNameBox" BorderBrush="Black"   HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top" TextWrapping="Wrap" Margin="246,8,0,0" Width="52" Height="20" />
+            <TextBox x:Name="AddressBox" BorderBrush="Black"  HorizontalAlignment="Left"  Grid.Row="3" VerticalAlignment="Top" TextWrapping="Wrap" Margin="246,4,0,0" Width="52" Height="20" />
+            <TextBox x:Name="TelephoneBox" BorderBrush="Black"  HorizontalAlignment="Left"  Grid.Row="5" VerticalAlignment="Top" TextWrapping="Wrap" Margin="253,10,0,0" Width="52" Height="20" />
+            <TextBox x:Name="ExperienceYearsBox" BorderBrush="Black"  HorizontalAlignment="Left"  Grid.Row="7" VerticalAlignment="Top" TextWrapping="Wrap" Margin="253,10,0,0" Width="52" Height="20" />
+            <TextBox x:Name="FloorBox" BorderBrush="Black"  HorizontalAlignment="Left"  Grid.Row="8" VerticalAlignment="Top" TextWrapping="Wrap" Margin="253,5,0,0" Width="52" Height="20" />
+            <TextBox x:Name="NUmberChildrenBox" BorderBrush="Black"  HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Top" TextWrapping="Wrap" Margin="271,11,0,0" Width="52" Height="20" />
+            <TextBox x:Name="MaxAgeBox"  BorderBrush="Black" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" TextWrapping="Wrap" Margin="271,7,0,0" Width="52" Height="20" />
+            <TextBox x:Name="MinAgeBox" BorderBrush="Black"  HorizontalAlignment="Left"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" TextWrapping="Wrap" Margin="271,8,0,0" Width="52" Height="20" />
+            <TextBox x:Name="RecomendationBox" BorderBrush="Black"  HorizontalAlignment="Left"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" TextWrapping="Wrap" Margin="271,5,0,0" Width="52" Height="20" RenderTransformOrigin="0.5,0.65" />
             <CheckBox x:Name="SundayButton" Style="{DynamicResource SmallTextStyle}" Content="Sunday" HorizontalAlignment="Left" Height="19" Margin="59,6,0,0" Grid.Row="6" VerticalAlignment="Top" Width="62" RenderTransformOrigin="2.093,0.735" Grid.Column="1"  />
             <CheckBox x:Name="MondayButton" Style="{DynamicResource SmallTextStyle}" Content="Monday" HorizontalAlignment="Left" Margin="59,5,0,11" Grid.Row="7" Width="82" RenderTransformOrigin="0.527,1.18"   Height="16" Grid.Column="1"/>
             <CheckBox x:Name="TuesdayButton" Style="{DynamicResource SmallTextStyle}" Content="Tuesday" HorizontalAlignment="Left" Height="19" Margin="59,4,0,0" Grid.Row="8" VerticalAlignment="Top" Width="77" Grid.Column="1"  />
@@ -93,9 +94,9 @@
             <ctrl:TimePicker x:Name="ThursdayEnd" Grid.Column="1" Margin="126,25,19,23" Grid.Row="9" Grid.RowSpan="3" Height="Auto" Width="Auto" IsEnabled="{Binding ElementName=ThursdayButton, Path=IsChecked}"/>
             <ctrl:TimePicker x:Name="FridayEnd" Grid.Column="1" Margin="126,24,19,25" Grid.Row="10" Grid.RowSpan="3" Height="Auto" Width="Auto" IsEnabled="{Binding ElementName=FridayButton, Path=IsChecked}"/>
             <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="180,17,0,23" Grid.Row="12" Width="75" Click="button_Click" Grid.Column="1" Grid.RowSpan="2"/>
-            <DatePicker x:Name="BirthDayBox" HorizontalAlignment="Left" Height="25" Margin="211,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="102"/>
-            <Label x:Name="price_label" Content="               " HorizontalAlignment="Left" Margin="71,1,0,0" Grid.Row="10" VerticalAlignment="Top" Height="26" Width="59"/>
-            <TextBox x:Name="PriceBox" HorizontalAlignment="Left" Height="23" Margin="255,4,0,0" Grid.Row="10" TextWrapping="Wrap" Text="              " VerticalAlignment="Top" Width="52"/>
+            <DatePicker x:Name="BirthDayBox" HorizontalAlignment="Left" Height="25" Margin="211,0,0,0" Grid.Row="4" VerticalAlignment="Top" Width="102" />
+            <Label x:Name="price_label" Content="               " HorizontalAlignment="Left" Margin="71,1,0,0" Grid.Row="10" VerticalAlignment="Top" Height="26" Width="150"/>
+
             <CheckBox x:Name="hebrewbox" Style="{DynamicResource SmallTextStyle}" Content="Hebrew" HorizontalAlignment="Left" Height="18" Margin="172,5,0,0" Grid.Row="11" VerticalAlignment="Top" Width="77"/>
             <CheckBox x:Name="englishbox" Style="{DynamicResource SmallTextStyle}" Content="English" HorizontalAlignment="Left" Height="18" Margin="246,6,0,0" Grid.Row="11" VerticalAlignment="Top" Width="67"/>
             <CheckBox x:Name="russianbox" Style="{DynamicResource SmallTextStyle}" Content="Russian" HorizontalAlignment="Left" Height="18" Margin="172,3,0,0" Grid.Row="13" VerticalAlignment="Top" Width="72"/>

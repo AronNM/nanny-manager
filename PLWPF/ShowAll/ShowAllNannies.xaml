@@ -30,8 +30,7 @@
                           Binding="{Binding Experience_Years}"/>
                 <DataGridTextColumn Header="Max Children"
                           Binding="{Binding Max_Children}"/>
-                <DataGridTextColumn Header="Max Travel Distance"
-                          Binding="{Binding Max_Travel_Distance}"/>
+                
                 <DataGridTextColumn Header="Hourly Price"
                           Binding="{Binding Hourly_Price}" />
                 <DataGridTextColumn Header="Monthly Price"

@@ -8,11 +8,11 @@
         Title="AddNewContract" Height="390.099" Width="300">
     <Grid>
         <Label x:Name="label" Content="Contract Number:" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Width="103"/>
-        <TextBox x:Name="ContractNumberBox" HorizontalAlignment="Left" Height="23" Margin="151,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ContractNumberBox" BorderBrush="Black" HorizontalAlignment="Left" Height="23" Margin="151,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label1" Content="Nanny Id:" HorizontalAlignment="Left" Margin="25,41,0,0" VerticalAlignment="Top" Width="76"/>
-        <TextBox x:Name="NannyIdBox" HorizontalAlignment="Left" Height="23" Margin="151,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NannyIdBox" BorderBrush="Black" HorizontalAlignment="Left" Height="23" Margin="151,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label2" Content="Child Id:" HorizontalAlignment="Left" Margin="25,70,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ChildIdBox" HorizontalAlignment="Left" Height="23" Margin="151,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ChildIdBox" BorderBrush="Black" HorizontalAlignment="Left" Height="23" Margin="151,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label3" Content="Mother Id:" HorizontalAlignment="Left" Margin="25,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.055,0.715"/>
         <Label x:Name="label4" Content="Intruduction meeting:" HorizontalAlignment="Left" Margin="25,127,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label5" Content="Signed" HorizontalAlignment="Left" Margin="25,153,0,0" VerticalAlignment="Top"/>
@@ -20,8 +20,8 @@
         <Label x:Name="pricelabel" Content="" HorizontalAlignment="Left" Margin="25,210,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label8" Content="The contract start in:" HorizontalAlignment="Left" Margin="25,236,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label9" Content="The contract ends in:" HorizontalAlignment="Left" Margin="25,267,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="MotherIdBox" HorizontalAlignment="Left" Height="23" Margin="151,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="priceBox" HorizontalAlignment="Left" Height="23" Margin="151,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="MotherIdBox" BorderBrush="Black" HorizontalAlignment="Left" Height="23" Margin="151,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="priceBox"  BorderBrush="Black" HorizontalAlignment="Left" Height="23" Margin="151,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
         <RadioButton x:Name="signed_yes" Content="Yes" HorizontalAlignment="Left" Margin="169,158,0,0" VerticalAlignment="Top" GroupName="signed"/>
         <RadioButton x:Name="hourly_yes" Content="Yes" HorizontalAlignment="Left" Margin="169,184,0,0" VerticalAlignment="Top" GroupName="hourly" Checked="radioButton_Copy_Checked"/>
         <RadioButton x:Name="signed_no" Content="No" HorizontalAlignment="Left" Margin="225,158,0,0" VerticalAlignment="Top" GroupName="signed"/>
@@ -29,8 +29,8 @@
         <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="105,313,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <RadioButton x:Name="meeting" Content="Yes" HorizontalAlignment="Left" Margin="169,132,0,0" VerticalAlignment="Top" GroupName="meeting"/>
         <RadioButton x:Name="meeting2" Content="No" HorizontalAlignment="Left" Margin="225,132,0,0" VerticalAlignment="Top" GroupName="meeting"/>
-        <DatePicker Name="StartDate" HorizontalAlignment="Left" Margin="151,238,0,0" VerticalAlignment="Top"/>
-        <DatePicker Name="EndDate" HorizontalAlignment="Left" Margin="151,267,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="StartDate" BorderBrush="Black" HorizontalAlignment="Left" Margin="151,238,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="EndDate" BorderBrush="Black" HorizontalAlignment="Left" Margin="151,267,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

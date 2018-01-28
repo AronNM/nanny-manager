@@ -10,25 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PLWPF.MyUserControl
+namespace PLWPF.windows
 {
     /// <summary>
-    /// Interaction logic for TimePicker.xaml
+    /// Interaction logic for ExceptionWindow.xaml
     /// </summary>
-    public partial class TimePicker : UserControl
+    public partial class ExceptionWindow : Window
     {
-        public TimePicker()
-        { 
-            InitializeComponent();
-        }
-
-        private void ChangeBrush(object sender, MouseButtonEventArgs e)
+        public ExceptionWindow()
         {
-            this.textBox.BorderBrush = Brushes.Black;
-            this.textBox1.BorderBrush = Brushes.Black;
+            InitializeComponent();
+            
+
         }
     }
 }
