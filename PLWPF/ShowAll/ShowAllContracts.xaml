@@ -33,6 +33,8 @@
                           Binding="{Binding Starts}"/>
                 <DataGridTextColumn Header="Ends on"
                           Binding="{Binding Ends}"/>
+                <DataGridTextColumn Header="Introduction Meeting"
+                          Binding="{Binding Introduction_meeting}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
